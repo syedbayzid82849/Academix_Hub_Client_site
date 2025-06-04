@@ -11,8 +11,8 @@ const Navbar = () => {
     const links = [
         <>
             <NavLink to="/" className={navLinkClass}>Home</NavLink>
-            <NavLink to="/jobs" className={navLinkClass}>Jobs</NavLink>
-            <NavLink to="/create-job" className={navLinkClass}>Add A Job</NavLink>
+            <NavLink to="/job" className={navLinkClass}>Jobs</NavLink>
+            <NavLink to="/create" className={navLinkClass}>Add A Job</NavLink>
             <NavLink to="/about" className={navLinkClass}>About</NavLink>
         </>
     ]
