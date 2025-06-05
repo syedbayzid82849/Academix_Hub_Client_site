@@ -8,12 +8,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: import.meta.env.VITE_apiKey,
-    authDomain: import.meta.env.VITE_authDomain,
-    projectId: import.meta.env.VITE_projectId,
-    storageBucket: import.meta.env.VITE_storageBucket,
-    messagingSenderId: import.meta.env.VITE_messagingSenderId,
-    appId: import.meta.env.VITE_appId
+    apiKey: ,
+    authDomain: "academix-hub-708a3.firebaseapp.com",
+    projectId: "academix-hub-708a3",
+    storageBucket: "academix-hub-708a3.firebasestorage.app",
+    messagingSenderId: "167585995516",
+    appId: "1:167585995516:web:ed4ea96a3436f10f745579"
 };
 
 // Initialize Firebase
