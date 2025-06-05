@@ -13,14 +13,10 @@ const Register = () => {
         const password = form.password.value;
         const confirmPassword = form.confirmPassword.value;
 
-        // Handle registration logic here
-        console.log(name, photo, email, password, confirmPassword);
-
 
     };
     return (
         <div className="flex flex-col md:flex-row items-center justify-center min-h-screen px-10 gap-5  ">
-            
             {/* Registration Form */}
             <div className=" md:w-3/5 lg:w-2/5 mt-3 p-4 rounded-md shadow sm:p-8 dark:bg-gray-50 dark:text-gray-800">
                 <h2 className="mb-3 text-3xl font-semibold text-center">Create an account</h2>
@@ -51,7 +47,7 @@ const Register = () => {
                     <p className="px-3 dark:text-gray-600">OR</p>
                     <hr className="w-full dark:text-gray-600" />
                 </div>
-                <form onSubmit={handleRegister} className="space-y-8">
+                <form ons className="space-y-8">
                     <div className="space-y-4">
                         {/* name */}
                         <div className="space-y-2">
@@ -86,7 +82,6 @@ const Register = () => {
                     <input type="submit" className="w-full px-8 py-3 font-semibold rounded-full dark:bg-blue-800 dark:text-gray-100" value="Register Here" />
                 </form>
             </div>
-
             {/* Lottie Animation */}
             <div className="w-2/5">
                 <Lottie animationData={animationData} loop={true} />

@@ -13,21 +13,16 @@ const Register = () => {
         const password = form.password.value;
         const confirmPassword = form.confirmPassword.value;
 
-        // Handle registration logic here
-        console.log(name, photo, email, password, confirmPassword);
-
 
     };
     return (
         <div className="flex flex-col md:flex-row items-center justify-center min-h-screen px-10 gap-5  ">
-            
             {/* Registration Form */}
             <div className=" md:w-3/5 lg:w-2/5 mt-3 p-4 rounded-md shadow sm:p-8 dark:bg-gray-50 dark:text-gray-800">
                 <h2 className="mb-3 text-3xl font-semibold text-center">Create an account</h2>
                 <p className="text-sm text-center dark:text-gray-600">I have Already an account?
                     <Link to={'/login'}><a href="#" rel="noopener noreferrer" className="focus:underline hover:underline">Login here</a></Link>
                 </p>
-
                 <div className="flex justify-center space-x-4 w-full my-4">
                     <button aria-label="Log in with Google" className=" p-3 rounded-sm">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-10 hover:text-yellow-400 hover:border-2  fill-current">
@@ -45,13 +40,13 @@ const Register = () => {
                         </svg>
                     </button>
                 </div>
-
+                
                 <div className="flex items-center w-full my-4">
                     <hr className="w-full dark:text-gray-600" />
                     <p className="px-3 dark:text-gray-600">OR</p>
                     <hr className="w-full dark:text-gray-600" />
                 </div>
-                <form onSubmit={handleRegister} className="space-y-8">
+                <form noValidate="" action="" className="space-y-8">
                     <div className="space-y-4">
                         {/* name */}
                         <div className="space-y-2">
@@ -86,7 +81,6 @@ const Register = () => {
                     <input type="submit" className="w-full px-8 py-3 font-semibold rounded-full dark:bg-blue-800 dark:text-gray-100" value="Register Here" />
                 </form>
             </div>
-
             {/* Lottie Animation */}
             <div className="w-2/5">
                 <Lottie animationData={animationData} loop={true} />
