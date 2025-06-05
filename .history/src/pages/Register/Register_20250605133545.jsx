@@ -34,7 +34,7 @@ const Register = () => {
         <div className="flex flex-col md:flex-row items-center justify-center min-h-screen md:px-10 gap-5  ">
 
             {/* Registration Form */}
-            <div className="w-full md:w-3/5 lg:w-2/5 mt-3 p-4 rounded-md shadow sm:p-8 dark:bg-gray-50 dark:text-gray-800">
+            <div className="w md:w-3/5 lg:w-2/5 mt-3 p-4 rounded-md shadow sm:p-8 dark:bg-gray-50 dark:text-gray-800">
                 <h2 className="mb-3 text-3xl font-semibold text-center">Create an account</h2>
                 <p className="text-sm text-center dark:text-gray-600">I have Already an account?
                     <Link to={'/login'}><a href="#" rel="noopener noreferrer" className="focus:underline hover:underline">Login here</a></Link>
@@ -103,7 +103,7 @@ const Register = () => {
             <div className="w-2/5">
                 <Lottie animationData={animationData} loop={true} />
             </div>
-
+        
             <ToastContainer
                 position="bottom-center"
                 autoClose={3000}

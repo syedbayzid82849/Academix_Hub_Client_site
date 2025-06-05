@@ -2,7 +2,6 @@ import React from 'react';
 import animationData from '../../components/lotties/package.json';
 import Lottie from 'lottie-react';
 import { Link } from 'react-router';
-import { toast, ToastContainer } from 'react-toastify';
 
 const Register = () => {
     const handleRegister = (event) => {
@@ -19,22 +18,38 @@ const Register = () => {
         console.log(name, photo, email, password, confirmPassword);
 
         // validation chack 
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
-        if (!passwordRegex.test(password)) return toast.error("Password must be strong.");
-        if (password !== confirmPassword) return toast.error("Passwords do not match.");
-        if (password.includes(email)) return toast.error("Password should not contain email.");
+          const errors = [];
 
-        if (passwordRegex.test(password) && password === confirmPassword && !password.includes(email)) {
-            // Proceed with registration logic
-            toast.success("Registration successful!");
-            // You can add your registration logic here, like sending data to the server
+
+        if (password.length < 8) {
+            errors.push("পাসওয়ার্ড কমপক্ষে ৮ অক্ষরের হতে হবে।");
         }
+        if (!/[A-Z]/.test(password)) {
+            errors.push("পাসওয়ার্ডে কমপক্ষে ১টি বড় হাতের অক্ষর থাকতে হবে।");
+        }
+        if (!/[a-z]/.test(password)) {
+            errors.push("পাসওয়ার্ডে কমপক্ষে ১টি ছোট হাতের অক্ষর থাকতে হবে।");
+        }
+        if (!/[0-9]/.test(password)) {
+            errors.push("পাসওয়ার্ডে কমপক্ষে ১টি সংখ্যা থাকতে হবে।");
+        }
+        if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+            errors.push("পাসওয়ার্ডে কমপক্ষে ১টি বিশেষ চিহ্ন থাকতে হবে।");
+        }
+        if (password.includes(email)) {
+            errors.push("পাসওয়ার্ডে ইমেইল অ্যাড্রেস থাকতে পারবে না।");
+        }
+        if (password !== confirmPassword) {
+            errors.push("পাসওয়ার্ড ও কনফার্ম পাসওয়ার্ড মিলে না।");
+        }
+
+
     };
     return (
-        <div className="flex flex-col md:flex-row items-center justify-center min-h-screen md:px-10 gap-5  ">
+        <div className="flex flex-col md:flex-row items-center justify-center min-h-screen px-10 gap-5  ">
 
             {/* Registration Form */}
-            <div className="w-full md:w-3/5 lg:w-2/5 mt-3 p-4 rounded-md shadow sm:p-8 dark:bg-gray-50 dark:text-gray-800">
+            <div className=" md:w-3/5 lg:w-2/5 mt-3 p-4 rounded-md shadow sm:p-8 dark:bg-gray-50 dark:text-gray-800">
                 <h2 className="mb-3 text-3xl font-semibold text-center">Create an account</h2>
                 <p className="text-sm text-center dark:text-gray-600">I have Already an account?
                     <Link to={'/login'}><a href="#" rel="noopener noreferrer" className="focus:underline hover:underline">Login here</a></Link>
@@ -103,20 +118,6 @@ const Register = () => {
             <div className="w-2/5">
                 <Lottie animationData={animationData} loop={true} />
             </div>
-
-            <ToastContainer
-                position="bottom-center"
-                autoClose={3000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="light"
-            />
-
         </div>
 
     );
