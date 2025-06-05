@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router';
+import logo from '../../assets/logo.jpg';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,7 +18,7 @@ const Navbar = () => {
     ]
     return (
         <header className="p-2 bg-gray-100 text-gray-800 shadow-md">
-            <div className="container mx-auto flex justify-between items-center h-16">
+            <div className="container mx-auto flex justify-around items-center h-16">
                 {/* Logo */}
                 <NavLink to="/" className=" flex items-center space-x-2 text-xl font-bold">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 32 32" className="w-8 h-8 text-violet-600">

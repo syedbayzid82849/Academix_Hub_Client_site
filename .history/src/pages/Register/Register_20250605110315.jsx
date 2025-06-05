@@ -21,7 +21,7 @@ const Register = () => {
             <div className=" md:w-3/5 lg:w-2/5 mt-3 p-4 rounded-md shadow sm:p-8 dark:bg-gray-50 dark:text-gray-800">
                 <h2 className="mb-3 text-3xl font-semibold text-center">Create an account</h2>
                 <p className="text-sm text-center dark:text-gray-600">I have Already an account?
-                    <Link to={'/login'}><a href="#" rel="noopener noreferrer" className="focus:underline hover:underline">Login here</a></Link>
+                    <Link to={'/login'}><a href="#" rel="noopener noreferrer" className="focus:underline hover:underline">Login here</a></link>
                 </p>
                 <div className="my-6 space-y-4">
                     <button aria-label="Login with Google" type="button" className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-default-600">

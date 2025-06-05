@@ -1,7 +1,6 @@
 import React from 'react';
 import animationData from '../../components/lotties/package.json';
 import Lottie from 'lottie-react';
-import { Link } from 'react-router';
 
 const Register = () => {
     const handleRegister = (event) => {
@@ -16,12 +15,12 @@ const Register = () => {
 
     };
     return (
-        <div className="flex flex-col md:flex-row items-center justify-center min-h-screen px-10 gap-5  ">
+        <div className="flex flex-col md:flex-row items-center justify-center min-h-screen px-10">
             {/* Registration Form */}
-            <div className=" md:w-3/5 lg:w-2/5 mt-3 p-4 rounded-md shadow sm:p-8 dark:bg-gray-50 dark:text-gray-800">
-                <h2 className="mb-3 text-3xl font-semibold text-center">Create an account</h2>
-                <p className="text-sm text-center dark:text-gray-600">I have Already an account?
-                    <Link to={'/login'}><a href="#" rel="noopener noreferrer" className="focus:underline hover:underline">Login here</a></Link>
+            <div className="w-full max-w-md mt-3 p-4 rounded-md shadow sm:p-8 dark:bg-gray-50 dark:text-gray-800">
+                <h2 className="mb-3 text-3xl font-semibold text-center">Login to your account</h2>
+                <p className="text-sm text-center dark:text-gray-600">Dont have account?
+                    <a href="#" rel="noopener noreferrer" className="focus:underline hover:underline">Sign up here</a>
                 </p>
                 <div className="my-6 space-y-4">
                     <button aria-label="Login with Google" type="button" className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-default-600">
@@ -53,38 +52,38 @@ const Register = () => {
                         {/* name */}
                         <div className="space-y-2">
                             <label htmlFor="name" className="block text-sm">Name</label>
-                            <input name="name" type="text" placeholder="Name" className="input input-bordered border-gray-300 w-full mb-3 border-1" required />
+                            <input name="name" type="text" placeholder="Name" className="input input-bordered w-full mb-3 border-1" required />
                         </div>
                         {/* photo */}
                         <div className="space-y-2">
                             <label htmlFor="photo" className="block text-sm">Photo URL</label>
-                            <input name="photo" type="text" placeholder="Photo URL" className="input input-bordered border-gray-300 w-full mb-3 border-1" required />
+                            <input name="photo" type="text" placeholder="Photo URL" className="input input-bordered w-full mb-3 border-1" required />
                         </div>
                         {/* email */}
                         <div className="space-y-2">
                             <label htmlFor="email" className="block text-sm">Email address</label>
-                            <input name="email" type="email" placeholder="Email" className="input input-bordered border-gray-300 w-full mb-3 border-1" required />
+                            <input name="email" type="email" placeholder="Email" className="input input-bordered w-full mb-3 border-1" required />
                         </div>
                         {/* password */}
                         <div className="space-y-2">
                             <div className="flex justify-between">
                                 <label htmlFor="password" className="text-sm">Password</label>
                             </div>
-                            <input name="password" type="password" placeholder="Password" className="input input-bordered border-gray-300 w-full mb-3 border-1" required />
+                            <input name="password" type="password" placeholder="Password" className="input input-bordered w-full mb-3 border-1" required />
                         </div>
                         {/* confirmPassword */}
                         <div className="space-y-2">
                             <div className="flex justify-between">
                                 <label htmlFor="password" className="text-sm">Password</label>
                             </div>
-                            <input name="confirmPassword" type="password" placeholder="Confirm Password" className="input input-bordered border-gray-300 w-full mb-3 border-1" required />
+                            <input name="confirmPassword" type="password" placeholder="Confirm Password" className="input input-bordered w-full mb-3 border-1" required />
                         </div>
                     </div>
-                    <input type="submit" className="w-full px-8 py-3 font-semibold rounded-full dark:bg-blue-800 dark:text-gray-100" value="Rounded" />
+                    <input type="submit" className="w-full px-8 py-3 font-semibold rounded-full dark:bg-blue-800 dark:text-gray-100">Rounded</in>
                 </form>
             </div>
             {/* Lottie Animation */}
-            <div className="w-2/5">
+            <div className="w-full md:w-1/3 mx-auto">
                 <Lottie animationData={animationData} loop={true} />
             </div>
         </div>

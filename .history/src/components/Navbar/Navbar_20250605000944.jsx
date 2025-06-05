@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router';
+import logo from '../../assets/logo.jpg';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +25,7 @@ const Navbar = () => {
                         <path d="M27.912 7.289..."></path>
                         <path d="M22.094 19.451..."></path>
                     </svg>
-                    <span className=' font-bold text-2xl tracking-wide text-violet-600 italic'>HobbyHub</span>
+                    <span className='flex justify-start font-bold text-2xl tracking-wide text-violet-600 italic'>HobbyHub</span>
                 </NavLink>
 
                 {/* Desktop Menu */}

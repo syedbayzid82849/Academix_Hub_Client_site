@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router';
+import logo from '../../assets/logo.jpg';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,12 +20,12 @@ const Navbar = () => {
         <header className="p-2 bg-gray-100 text-gray-800 shadow-md">
             <div className="container mx-auto flex justify-between items-center h-16">
                 {/* Logo */}
-                <NavLink to="/" className=" flex items-center space-x-2 text-xl font-bold">
+                <NavLink to="/" className="border flex items-center space-x-2 text-xl font-bold">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 32 32" className="w-8 h-8 text-violet-600">
                         <path d="M27.912 7.289..."></path>
                         <path d="M22.094 19.451..."></path>
                     </svg>
-                    <span className=' font-bold text-2xl tracking-wide text-violet-600 italic'>HobbyHub</span>
+                    <span className='flex justify-start font-bold text-2xl tracking-wide text-violet-600 italic'>HobbyHub</span>
                 </NavLink>
 
                 {/* Desktop Menu */}
