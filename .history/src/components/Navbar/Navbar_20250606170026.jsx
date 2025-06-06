@@ -6,7 +6,7 @@ import { FaCircleUser } from "react-icons/fa6";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const { user, signOutUser } = useContext(AuthContext);
+    const { user,  } = useContext(AuthContext);
     console.log(user);
 
     const navLinkClass = ({ isActive }) =>
@@ -22,16 +22,7 @@ const Navbar = () => {
             </>
         );
 
-    // user sign out 
-    const handleSignOut = () => {
-        signOutUser()
-            .then(result => {
-                console.log('sign out successful', result);
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    }
+
 
     return (
         <header className="p-2 bg-gray-100 text-gray-800 shadow-md">
@@ -69,12 +60,13 @@ const Navbar = () => {
                                     </NavLink>
                                 </div>
 
-                                <button
-                                    onClick={handleSignOut}
+                                <NavLink
+                                    to="/logout"
+                                    onClick={() => { signOutUser() }}
                                     className="px-4 py-2 font-semibold rounded bg-violet-600 text-white hover:bg-violet-700"
                                 >
                                     Logout
-                                </button>
+                                </NavLink>
                             </>
                         ) : (
                             <>
@@ -130,12 +122,12 @@ const Navbar = () => {
                                         </div>
 
                                         <div>
-                                            <button
-                                                onClick={handleSignOut}
+                                            <NavLink
+                                                to="/logout"
                                                 className="px-4 py-2 font-semibold rounded bg-violet-600 text-white hover:bg-violet-700"
                                             >
                                                 Logout
-                                            </button>
+                                            </NavLink>
                                         </div>
                                     </div>
                                 </>

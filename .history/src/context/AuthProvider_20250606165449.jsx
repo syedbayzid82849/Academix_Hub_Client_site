@@ -45,7 +45,7 @@ const AuthProvider = ({ children }) => {
         setLoading,
         createUserWithEP,
         loginUserWithEP,
-        signOutUser,
+        signOutUser
     };
     return (
         <AuthContext.Provider value={authInformation}>

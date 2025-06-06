@@ -26,7 +26,7 @@ const Navbar = () => {
     const handleSignOut = () => {
         signOutUser()
             .then(result => {
-                console.log('sign out successful', result);
+                console.log(result);
             })
             .catch(error => {
                 console.log(error);
@@ -130,12 +130,12 @@ const Navbar = () => {
                                         </div>
 
                                         <div>
-                                            <button
-                                                onClick={handleSignOut}
-                                                className="px-4 py-2 font-semibold rounded bg-violet-600 text-white hover:bg-violet-700"
-                                            >
-                                                Logout
-                                            </button>
+<button
+    onClick={handleSignOut}
+    className="px-4 py-2 font-semibold rounded bg-violet-600 text-white hover:bg-violet-700"
+>
+    Logout
+</button>
                                         </div>
                                     </div>
                                 </>
