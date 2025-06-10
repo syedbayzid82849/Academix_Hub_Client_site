@@ -1,6 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router';
-import { motion } from 'framer-motion'; 
+import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion'; // ✅ Import motion
 
 const HomeCourseComponent = ({ courses }) => {
     const latestCourses = courses.slice(0, 6);
@@ -12,7 +12,7 @@ const HomeCourseComponent = ({ courses }) => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {latestCourses.map(({ title, image, _id, createdAt }) => (
-                        <motion.div
+                        <motion .div
                             key={_id}
                             className="bg-white shadow-md rounded-2xl overflow-hidden"
                             whileHover={{ scale: 1.05 }}

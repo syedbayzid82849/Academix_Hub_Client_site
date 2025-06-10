@@ -1,6 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router';
-import { motion } from 'framer-motion'; 
+import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion'; // ✅ Import motion
 
 const HomeCourseComponent = ({ courses }) => {
     const latestCourses = courses.slice(0, 6);
