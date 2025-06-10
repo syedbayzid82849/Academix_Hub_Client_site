@@ -1,0 +1,83 @@
+import React from "react";
+import Slider from "react-slick";
+import { motion } from "framer-motion";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import banner1 from "../../assets/banner1.jpg";
+import banner2 from "../../assets/banner2.jpg";
+
+const Hero = () => {
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 800,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        arrows: false,
+    };
+
+    const slides = [
+        {
+            id: 1,
+            title: "Learn New Skills Online",
+            subtitle: "Explore a variety of courses and expand your knowledge.",
+            img: banner1,
+        },
+        {
+            id: 2,
+            title: "Upgrade Your Career",
+            subtitle: "Join top-rated courses and learn from experts today.",
+            img: banner2,
+        },
+    ];
+
+    return (
+        <div className="w-full h-[80vh] relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-50 z-10"></div>
+            <Slider {...settings}>
+                {slides.map((slide) => (
+                    <div key={slide.id} className="relative h-[80vh] w-full">
+                        <div
+                            className="absolute inset-0 \]] bg-opacity-50 z-10"
+                            style={{ backdropFilter: "brightness(0.5)" }}
+                        ></div>
+                        <img
+                            src={slide.img}
+                            alt="Banner"
+                            className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 flex flex-col justify-center items-center text-center z-20 text-white px-4">
+                            <motion.h2
+                                initial={{ y: -50, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 1 }}
+                                className="text-4xl md:text-6xl font-bold mb-4"
+                            >
+                                {slide.title}
+                            </motion.h2>
+                            <motion.p
+                                initial={{ y: 50, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 1.2 }}
+                                className="text-lg md:text-xl mb-6"
+                            >
+                                {slide.subtitle}
+                            </motion.p>
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-full text-lg font-semibold shadow-lg"
+                            >
+                                Get Started
+                            </motion.button>
+                        </div>
+                    </div>
+                ))}
+            </Slider>
+        </div>
+    );
+};
+
+export default Hero;
