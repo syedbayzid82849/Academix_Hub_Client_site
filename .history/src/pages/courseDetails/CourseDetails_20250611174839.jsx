@@ -52,7 +52,7 @@ const CourseDetails = () => {
 
             <button
                 onClick={handleEnrollBtn}
-                disabled={!user}
+                disabled={!user || isEnrolled=}
                 className={`w-full mt-6 px-4 py-2 rounded font-semibold 
             ${!user ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
             >

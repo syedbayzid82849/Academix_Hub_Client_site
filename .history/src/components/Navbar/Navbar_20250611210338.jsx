@@ -49,12 +49,12 @@ const Navbar = () => {
                     </li>
                 </>
             )}
-            {/* <li>
+            <li>
                 <NavLink
                     to="/about"
                     className={({ isActive }) => isActive ? "text-violet-600 font-semibold" : "text-gray-800"}
                 >About</NavLink>
-            </li> */}
+            </li>
         </div>
     );
 

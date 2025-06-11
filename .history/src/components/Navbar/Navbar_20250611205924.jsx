@@ -14,7 +14,7 @@ const Navbar = () => {
         isActive ? 'text-violet-600 font-semibold' : 'text-gray-800';
 
     const links = (
-        <div className="list-none flex flex-col lg:flex-row gap-4 lg:gap-6">
+        <>
             <li>
                 <NavLink
                     to="/"
@@ -27,6 +27,21 @@ const Navbar = () => {
                     className={({ isActive }) => isActive ? "text-violet-600 font-semibold" : "text-gray-800"}
                 >All Courses</NavLink>
             </li>
+            {/* আপনার অ্যাসাইনমেন্টে 'Jobs' পেজের উল্লেখ ছিল, যদি থাকে তবে এখানে যোগ করুন */}
+            {/* <li>
+                <NavLink
+                    to="/jobs"
+                    className={({ isActive }) => isActive ? "text-violet-600 font-semibold" : "text-gray-800"}
+                >Jobs</NavLink>
+            </li> */}
+            <li>
+                <NavLink
+                    to="/about"
+                    className={({ isActive }) => isActive ? "text-violet-600 font-semibold" : "text-gray-800"}
+                >About</NavLink>
+            </li>
+
+            {/* ইউজার লগইন করা থাকলে এই লিংকগুলো দেখাবে */}
             {user && (
                 <>
                     <li>
@@ -49,13 +64,7 @@ const Navbar = () => {
                     </li>
                 </>
             )}
-            {/* <li>
-                <NavLink
-                    to="/about"
-                    className={({ isActive }) => isActive ? "text-violet-600 font-semibold" : "text-gray-800"}
-                >About</NavLink>
-            </li> */}
-        </div>
+        </>
     );
 
     // user sign out 

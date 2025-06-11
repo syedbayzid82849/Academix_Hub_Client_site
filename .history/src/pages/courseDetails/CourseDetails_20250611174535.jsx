@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router';
 import { AuthContext } from '../../context/AuthContext';
 
@@ -7,13 +7,12 @@ const CourseDetails = () => {
     const singleCourse = useLoaderData();
     const { user } = useContext(AuthContext);
     const [isEnrolled, setIsEnrolled] = useState(false);
-    console.log(isEnrolled);
+clg
     console.log(singleCourse, user);
     const { _id, title, seats, instructorName, instructorEmail, image, enrolled, duration, description, createdAt } = singleCourse;
 
     const handleEnrollBtn = () => {
         console.log('Enroll button clicked');
-        setIsEnrolled(true);
     };
     return (
         <div className="max-w-4xl mx-auto px-4 py-10 bg-amber-50">

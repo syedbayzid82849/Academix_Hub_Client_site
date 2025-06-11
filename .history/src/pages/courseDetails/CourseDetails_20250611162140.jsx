@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router';
 import { AuthContext } from '../../context/AuthContext';
 
@@ -6,14 +6,11 @@ import { AuthContext } from '../../context/AuthContext';
 const CourseDetails = () => {
     const singleCourse = useLoaderData();
     const { user } = useContext(AuthContext);
-    const [isEnrolled, setIsEnrolled] = useState(false);
-    console.log(isEnrolled);
     console.log(singleCourse, user);
     const { _id, title, seats, instructorName, instructorEmail, image, enrolled, duration, description, createdAt } = singleCourse;
 
     const handleEnrollBtn = () => {
         console.log('Enroll button clicked');
-        setIsEnrolled(true);
     };
     return (
         <div className="max-w-4xl mx-auto px-4 py-10 bg-amber-50">
@@ -28,7 +25,7 @@ const CourseDetails = () => {
             <p className="text-gray-600 mt-3">
                 <span className="font-semibold">Description:</span>
             </p>
-            <p className="text-gray-800 my-5 border rounded-2xl border-gray-200 p-4">{description}</p>
+            <p className="text-gray-800 mb-5 border rounded-2xl border-gray-200 p-4">{description}</p>
 
 
             {/* Course Title */}
@@ -51,10 +48,9 @@ const CourseDetails = () => {
             </div>
 
             <button
-                onClick={handleEnrollBtn}
                 disabled={!user}
-                className={`w-full mt-6 px-4 py-2 rounded font-semibold 
-            ${!user ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
+                className={`px-4 py-2 rounded font-semibold 
+    ${!user ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
             >
                 Enroll
             </button>

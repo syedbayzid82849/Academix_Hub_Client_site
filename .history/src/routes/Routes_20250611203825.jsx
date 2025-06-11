@@ -6,8 +6,6 @@ import Home from "../pages/Home/Home";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AllCourse from "../pages/AllCourse/AllCourse";
 import CourseDetails from "../pages/courseDetails/CourseDetails";
-import AddCourse from "../pages/AddCourse/AddCourse";
-import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -21,7 +19,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/courses',
-                element: <AllCourse></AllCourse>
+                element: 
+                <PrivateRoute
             },
             {
                 path: '/all-course/:id',
@@ -29,16 +28,9 @@ const router = createBrowserRouter([
                 element: <CourseDetails></CourseDetails>
             },
             {
-                path: '/add-course',
-                element:
-                    <PrivateRoute>
-                        <AddCourse></AddCourse>
-                    </PrivateRoute>
-            },
-            {
                 path: '/login',
                 element: <Login></Login>
-            },
+            }, 
             {
                 path: '/register',
                 element: <Register></Register>

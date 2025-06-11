@@ -13,7 +13,7 @@ const CourseDetails = () => {
 
     const handleEnrollBtn = () => {
         console.log('Enroll button clicked');
-        setIsEnrolled(true);
+        set
     };
     return (
         <div className="max-w-4xl mx-auto px-4 py-10 bg-amber-50">
