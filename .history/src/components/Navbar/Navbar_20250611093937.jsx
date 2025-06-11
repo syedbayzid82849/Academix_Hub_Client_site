@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { user, signOutUser } = useContext(AuthContext);
+    console.log(user);
 
     const navLinkClass = ({ isActive }) =>
         isActive ? 'text-violet-600 font-semibold' : 'text-gray-800';
@@ -82,10 +83,10 @@ const Navbar = () => {
                                     <NavLink to="/profile">
                                         {user?.photoURL ? (
                                             <img
-                                                className="w-10 h-10 border border-black rounded-full object-cover"
+                                                className="w-10 h-10 border border-black rounded-full object-cover" // object-cover যোগ করা হয়েছে যাতে ছবি সঠিকভাবে ফিট হয়
                                                 src={user?.photoURL}
                                                 alt="Profile"
-                                                onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/40x40/E0E0E0/444444?text=User'; }}
+                                                onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/40x40/E0E0E0/444444?text=User'; }} // ছবির লোডিং ব্যর্থ হলে ফলব্যাক
                                             />
                                         ) : (
                                             // যদি photoURL না থাকে, তবে FaCircleUser আইকনটি দেখান

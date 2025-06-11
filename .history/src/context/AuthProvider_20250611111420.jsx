@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { AuthContext } from './AuthContext';
-import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { auth } from '../firebase/firebase.init';
 import axios from 'axios';
 
@@ -29,12 +29,7 @@ const AuthProvider = ({ children }) => {
     const userWithGoogle = () => {
         setLoading(true);
         return signInWithPopup(auth, provider)
-    }
 
-    // sign in with github
-    const userWithGithub = () => {
-        setLoading(true);
-        return signInWithPopup(auth, githubProvider)
     }
 
     // sign out user
@@ -78,8 +73,7 @@ const AuthProvider = ({ children }) => {
         loginUserWithEP,
         signOutUser,
         getAllCourses,
-        userWithGoogle,
-        userWithGithub
+        userWithGoogle
     };
     return (
         <AuthContext.Provider value={authInformation}>

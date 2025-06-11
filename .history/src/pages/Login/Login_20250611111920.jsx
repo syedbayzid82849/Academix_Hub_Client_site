@@ -6,7 +6,7 @@ import { AuthContext } from '../../context/AuthContext';
 import { toast, ToastContainer } from 'react-toastify';
 
 const Login = () => {
-    const { loginUserWithEP, userWithGoogle, userWithGithub } = useContext(AuthContext);
+    const { loginUserWithEP, userWithGoogle,  } = useContext(AuthContext);
 
     const handleLogin = (event) => {
         event.preventDefault();

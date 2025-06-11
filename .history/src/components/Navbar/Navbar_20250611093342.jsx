@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { user, signOutUser } = useContext(AuthContext);
+    console.log(user);
 
     const navLinkClass = ({ isActive }) =>
         isActive ? 'text-violet-600 font-semibold' : 'text-gray-800';
@@ -80,17 +81,11 @@ const Navbar = () => {
                             <>
                                 <div className="tooltip tooltip-bottom" data-tip={user?.displayName || "User"}>
                                     <NavLink to="/profile">
-                                        {user?.photoURL ? (
-                                            <img
-                                                className="w-10 h-10 border border-black rounded-full object-cover"
-                                                src={user?.photoURL}
-                                                alt="Profile"
-                                                onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/40x40/E0E0E0/444444?text=User'; }}
-                                            />
-                                        ) : (
-                                            // যদি photoURL না থাকে, তবে FaCircleUser আইকনটি দেখান
-                                            <FaCircleUser className="text-4xl text-gray-700 hover:text-violet-600 cursor-pointer" />
-                                        )}
+                                        <img
+                                            className="w-10 h-10 border border-black rounded-full"
+                                            src={user?.photoURL ? user?.photoURL : <FaCircleUser className="text-4xl hover:text-violet-600" />}
+                                            alt="Profile"
+                                        />
                                     </NavLink>
                                 </div>
 

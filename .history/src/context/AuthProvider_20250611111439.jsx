@@ -32,10 +32,6 @@ const AuthProvider = ({ children }) => {
     }
 
     // sign in with github
-    const userWithGithub = () => {
-        setLoading(true);
-        return signInWithPopup(auth, githubProvider)
-    }
 
     // sign out user
     const signOutUser = () => {
@@ -78,8 +74,7 @@ const AuthProvider = ({ children }) => {
         loginUserWithEP,
         signOutUser,
         getAllCourses,
-        userWithGoogle,
-        userWithGithub
+        userWithGoogle
     };
     return (
         <AuthContext.Provider value={authInformation}>

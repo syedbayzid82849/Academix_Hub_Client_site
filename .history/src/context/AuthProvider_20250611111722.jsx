@@ -35,6 +35,7 @@ const AuthProvider = ({ children }) => {
     const userWithGithub = () => {
         setLoading(true);
         return signInWithPopup(auth, githubProvider)
+
     }
 
     // sign out user

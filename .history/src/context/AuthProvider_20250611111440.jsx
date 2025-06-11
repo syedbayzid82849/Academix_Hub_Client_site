@@ -35,6 +35,14 @@ const AuthProvider = ({ children }) => {
     const userWithGithub = () => {
         setLoading(true);
         return signInWithPopup(auth, githubProvider)
+            .then(result => {
+                console.log(result);
+                return result;
+            })
+            .catch(error => {
+                console.error("Error signing in with GitHub:", error);
+                throw error;
+            });
     }
 
     // sign out user
@@ -78,8 +86,7 @@ const AuthProvider = ({ children }) => {
         loginUserWithEP,
         signOutUser,
         getAllCourses,
-        userWithGoogle,
-        userWithGithub
+        userWithGoogle
     };
     return (
         <AuthContext.Provider value={authInformation}>

@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { user, signOutUser } = useContext(AuthContext);
+    console.log(user);
 
     const navLinkClass = ({ isActive }) =>
         isActive ? 'text-violet-600 font-semibold' : 'text-gray-800';
