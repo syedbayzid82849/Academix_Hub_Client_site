@@ -20,13 +20,10 @@ const AddCourse = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const form = e.target;
-        const formData = new FormData(form);
-        const newCourse = Object.fromEntries(formData.entries());
-        console.log(newCourse);
-
-        // API call to submit newCourse
         
+        const formData = new FormData(form);
+        const newCategory = Object.fromEntries(formData.entries());
+        console.log(newCategory);
     };
 
     return (

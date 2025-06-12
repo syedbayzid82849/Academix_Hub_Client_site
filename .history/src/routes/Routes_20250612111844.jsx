@@ -8,7 +8,6 @@ import AllCourse from "../pages/AllCourse/AllCourse";
 import CourseDetails from "../pages/courseDetails/CourseDetails";
 import AddCourse from "../pages/AddCourse/AddCourse";
 import PrivateRoute from "./PrivateRoute";
-import ManageCourse from "../pages/MenageCouse/MenageCourse";
 
 const router = createBrowserRouter([
     {
@@ -37,7 +36,7 @@ const router = createBrowserRouter([
                     </PrivateRoute>
             },
             {
-                path: '/manage-courses',
+                path: '/manage-course',
                 element:
                     <PrivateRoute>
                         <ManageCourse></ManageCourse>

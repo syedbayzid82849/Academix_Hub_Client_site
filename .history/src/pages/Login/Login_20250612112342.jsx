@@ -43,7 +43,7 @@ const Login = () => {
                 console.log(result);
                 toast.success("Google login successful!");
                 navigate(from);
-
+                
             })
             .catch((error) => {
                 console.log(error);
@@ -57,9 +57,9 @@ const Login = () => {
             .then((result) => {
                 console.log(result);
                 toast.success("GitHub login successful!");
-                setTimeout(() => {
-                    navigate(from || '/');
-                }, 500);
+                            setTimeout(() => {
+                navigate(from || '/');
+            }, 500);
             })
             .catch((error) => {
                 console.log(error);

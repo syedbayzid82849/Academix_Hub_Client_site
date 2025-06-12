@@ -20,13 +20,15 @@ const AddCourse = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const form = e.target;
-        const formData = new FormData(form);
-        const newCourse = Object.fromEntries(formData.entries());
-        console.log(newCourse);
-
-        // API call to submit newCourse
-        
+        const { title, description, imageUrl, duration, email, name } = formData;
+        const courseData = {
+            title,
+            description,
+            imageUrl,
+            duration,
+            instructorEmail: email,
+            instructorName: name
+        };
     };
 
     return (
@@ -40,9 +42,9 @@ const AddCourse = () => {
             <form onSubmit={handleSubmit} className="space-y-4 ">
 
                 <label className="block">Name: </label>
-                <input name="instructorName" onChange={handleChange} type='text' value={formData.instructorName} className="w-full p-3 border rounded-lg" placeholder="Name" required />
+                <input name="instructorName" onChange={handleChange} type='text' value={formData.name} className="w-full p-3 border rounded-lg" placeholder="Name" required />
                 <label className="block">Email: </label>
-                <input name="instructorEmail" onChange={handleChange} type='email' value={formData.instructorEmail} className="w-full p-3 border rounded-lg" placeholder="Email" required />
+                <input name="instructorEmail" onChange={handleChange} type='email' value={formData.email} className="w-full p-3 border rounded-lg" placeholder="Email" required />
 
                 <div className="w-32 mx-auto">
                     <Lottie animationData={animationData} loop={true} />
@@ -54,7 +56,7 @@ const AddCourse = () => {
                 <textarea
                     name="description"
                     rows="4"
-                    className="  border rounded w-full py-2 px-3  "
+                    className="  border rounded w-full py-2 px-3  " 
                     placeholder="Provide a brief description of the course"
                     required
                 ></textarea>

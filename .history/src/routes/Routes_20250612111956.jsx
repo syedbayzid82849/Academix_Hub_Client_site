@@ -37,7 +37,7 @@ const router = createBrowserRouter([
                     </PrivateRoute>
             },
             {
-                path: '/manage-courses',
+                path: '/manage-courseS',
                 element:
                     <PrivateRoute>
                         <ManageCourse></ManageCourse>

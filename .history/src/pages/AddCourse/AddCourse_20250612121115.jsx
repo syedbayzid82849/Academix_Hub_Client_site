@@ -26,7 +26,6 @@ const AddCourse = () => {
         console.log(newCourse);
 
         // API call to submit newCourse
-        
     };
 
     return (

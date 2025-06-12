@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router';
+import { Link } from 'react-router';
 import animationData from '../../components/lotties/Login lotties.json';
 import Lottie from 'lottie-react';
 import { AuthContext } from '../../context/AuthContext';
@@ -7,10 +7,7 @@ import { toast, ToastContainer } from 'react-toastify';
 
 const Login = () => {
     const { loginUserWithEP, userWithGoogle, userWithGithub } = useContext(AuthContext);
-    const navigate = useNavigate();
-    const location = useLocation();
-    console.log(location);
-    const from = location?.state?.from?.pathname || '/';
+    const navigate
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -28,7 +25,7 @@ const Login = () => {
                 console.log(result);
                 toast.success("Login successful!");
                 form.reset();
-                navigate(from);
+
             })
             .catch((error) => {
                 console.log(error);
@@ -42,8 +39,9 @@ const Login = () => {
             .then((result) => {
                 console.log(result);
                 toast.success("Google login successful!");
-                navigate(from);
+                form.reset();
 
+                
             })
             .catch((error) => {
                 console.log(error);
@@ -57,9 +55,8 @@ const Login = () => {
             .then((result) => {
                 console.log(result);
                 toast.success("GitHub login successful!");
-                setTimeout(() => {
-                    navigate(from || '/');
-                }, 500);
+                form.reset();
+                
             })
             .catch((error) => {
                 console.log(error);

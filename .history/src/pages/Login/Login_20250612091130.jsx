@@ -10,7 +10,6 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     console.log(location);
-    const from = location?.state?.from?.pathname || '/';
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -28,7 +27,7 @@ const Login = () => {
                 console.log(result);
                 toast.success("Login successful!");
                 form.reset();
-                navigate(from);
+                navigate('/');
             })
             .catch((error) => {
                 console.log(error);
@@ -42,8 +41,8 @@ const Login = () => {
             .then((result) => {
                 console.log(result);
                 toast.success("Google login successful!");
-                navigate(from);
-
+                navigate('/');
+                
             })
             .catch((error) => {
                 console.log(error);
@@ -57,9 +56,7 @@ const Login = () => {
             .then((result) => {
                 console.log(result);
                 toast.success("GitHub login successful!");
-                setTimeout(() => {
-                    navigate(from || '/');
-                }, 500);
+                navigate('/');
             })
             .catch((error) => {
                 console.log(error);

@@ -20,13 +20,15 @@ const AddCourse = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const form = e.target;
-        const formData = new FormData(form);
-        const newCourse = Object.fromEntries(formData.entries());
-        console.log(newCourse);
-
-        // API call to submit newCourse
-        
+        const { title, description, imageUrl, duration, email, name } = formData;
+        const courseData = {
+            title,
+            description,
+            imageUrl,
+            duration,
+            instructorEmail,
+            instructorName
+        };
     };
 
     return (
@@ -54,7 +56,7 @@ const AddCourse = () => {
                 <textarea
                     name="description"
                     rows="4"
-                    className="  border rounded w-full py-2 px-3  "
+                    className="  border rounded w-full py-2 px-3  " 
                     placeholder="Provide a brief description of the course"
                     required
                 ></textarea>

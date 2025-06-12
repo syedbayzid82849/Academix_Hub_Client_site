@@ -20,13 +20,12 @@ const AddCourse = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const form = e.target;
-        const formData = new FormData(form);
-        const newCourse = Object.fromEntries(formData.entries());
-        console.log(newCourse);
-
-        // API call to submit newCourse
-        
+        const courseData = {
+            ...formData,
+            createdAt: new Date().toISOString(),
+        };
+        console.log('Course Submitted:', courseData);
+        // API call to submit courseData
     };
 
     return (
@@ -39,29 +38,30 @@ const AddCourse = () => {
             <h2 className="text-2xl font-bold text-center mb-6">Add Course</h2>
             <form onSubmit={handleSubmit} className="space-y-4 ">
 
-                <label className="block">Name: </label>
-                <input name="instructorName" onChange={handleChange} type='text' value={formData.instructorName} className="w-full p-3 border rounded-lg" placeholder="Name" required />
-                <label className="block">Email: </label>
-                <input name="instructorEmail" onChange={handleChange} type='email' value={formData.instructorEmail} className="w-full p-3 border rounded-lg" placeholder="Email" required />
+                <label htmlFor="name" className="block">Name: </label>
+                <input name="name" onChange={handleChange} type='text' value={formData.name} className="w-full p-3 border rounded-lg" placeholder="Name" required />
+                <label htmlFor="email" className="block">Email: </label>
+                <input name="email" onChange={handleChange} type='email' value={formData.email} className="w-full p-3 border rounded-lg" placeholder="Email" required />
 
                 <div className="w-32 mx-auto">
                     <Lottie animationData={animationData} loop={true} />
                 </div>
 
-                <label className="block">Course Name: </label>
-                <input name="courseName" onChange={handleChange} type='text' value={formData.courseName} className="w-full p-3 border rounded-lg" placeholder="Course Name" required />
-                <label className="block">Short Description: </label>
+                <label htmlFor="email" className="block">Course Name: </label>
+                <input name="title" onChange={handleChange} type='text' value={formData.title} className="w-full p-3 border rounded-lg" placeholder="Course Name" required />
+                <label htmlFor="description" className="block">Short Description: </label>
                 <textarea
-                    name="description"
                     rows="4"
-                    className="  border rounded w-full py-2 px-3  "
+                    className="]  border rounded w-full py-2 px-3  " 
                     placeholder="Provide a brief description of the course"
+                    value={formData.description}
+                    onChange={handleChange}
                     required
                 ></textarea>
-                <label className="block">Image URL: </label>
+                <label htmlFor="imageUrl" className="block">Image URL: </label>
                 <input name="imageUrl" onChange={handleChange} type='url' value={formData.imageUrl} className="w-full p-3 border rounded-lg" placeholder="Image URL" required />
-                <label className="block">Duration: </label>
-                <input name="duration" onChange={handleChange} type='text' value={formData.duration} className="w-full p-3 border rounded-lg" placeholder="Duration" required />
+                <label htmlFor="duration" className="block">Duration: </label>
+                <input name="duration" onChange={handleChange} type='number' value={formData.duration} className="w-full p-3 border rounded-lg" placeholder="Duration" required />
                 <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold">Add Course</button>
 
             </form>

@@ -24,9 +24,6 @@ const AddCourse = () => {
         const formData = new FormData(form);
         const newCourse = Object.fromEntries(formData.entries());
         console.log(newCourse);
-
-        // API call to submit newCourse
-        
     };
 
     return (

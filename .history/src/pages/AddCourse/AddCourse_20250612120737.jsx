@@ -22,11 +22,8 @@ const AddCourse = () => {
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
-        const newCourse = Object.fromEntries(formData.entries());
-        console.log(newCourse);
-
-        // API call to submit newCourse
-        
+        const newCategory = Object.fromEntries(formData.entries());
+        console.log(newCategory);
     };
 
     return (
