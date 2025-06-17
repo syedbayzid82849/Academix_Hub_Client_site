@@ -41,7 +41,7 @@ const CourseDetails = () => {
     // user how may enrolled in courses 
     useEffect(() => {
         if (user?.email) {
-            axios.get(`http://localhost:3000/enroll-count/${user.email}`)
+            axios.get(`https://academix-hub-server.vercel.app/enroll-count/${user.email}`)
                 .then(res => {
                     setUserEnrollCount(res.data.length);
                 })
@@ -53,7 +53,7 @@ const CourseDetails = () => {
 
     // to get all enrolled users data 
     useEffect(() => {
-        axios.get(`http://localhost:3000/enrolled-users/${_id}`)
+        axios.get(`https://academix-hub-server.vercel.app/enrolled-users/${_id}`)
             .then(res => {
                 setTotalEnroll(res.data.length)
             })
@@ -63,7 +63,7 @@ const CourseDetails = () => {
     }, [_id]);
 
     // find to user enroll or not enroll 
-    axios.get(`http://localhost:3000/enrolled-users/${_id}?email=${user?.email}`)
+    axios.get(`https://academix-hub-server.vercel.app/enrolled-users/${_id}?email=${user?.email}`)
         .then(res => {
             if (res.data) {
                 setIsEnrolled(true);
@@ -94,7 +94,7 @@ const CourseDetails = () => {
 
 
         axios
-            .post('http://localhost:3000/enrolled-users', enrolledUserDetails)
+            .post('https://academix-hub-server.vercel.app/enrolled-users', enrolledUserDetails)
             .then(res => {
                 console.log(res);
                 setIsEnrolled(true);
