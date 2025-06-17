@@ -27,7 +27,7 @@ const AddCourse = () => {
 
         // send course data to the database
         try {
-            const response = await fetch('http://localhost:3000/add-course')
+            const response = await fetch('https://academix-hub-server.vercel.app/add-course')
                 .then(res =)
     };
 

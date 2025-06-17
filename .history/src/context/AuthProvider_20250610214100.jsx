@@ -30,7 +30,7 @@ const AuthProvider = ({ children }) => {
 
     // get all courses from the server
     // const getAllCourses = () => {
-    //     return fetch('http://localhost:3000/all-course')
+    //     return fetch('https://academix-hub-server.vercel.app/all-course')
 
     // user check
     useEffect(() => {

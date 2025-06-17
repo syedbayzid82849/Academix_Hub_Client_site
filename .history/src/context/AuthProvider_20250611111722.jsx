@@ -47,7 +47,7 @@ const AuthProvider = ({ children }) => {
     // get all courses from the server
     const getAllCourses = () => {
         setLoading(true);
-        return axios.get('http://localhost:3000/all-course')
+        return axios.get('https://academix-hub-server.vercel.app/all-course')
             .then(response => {
                 setLoading(false);
                 return response.data;

@@ -19,7 +19,7 @@ const AddCourse = () => {
         const formData = new FormData(form);
         const newCourse = Object.fromEntries(formData.entries());
         axios
-            .post('http://localhost:3000/all-course', newCourse)
+            .post('https://academix-hub-server.vercel.app/all-course', newCourse)
             .then(res => console.log(res))
             .catch
     }

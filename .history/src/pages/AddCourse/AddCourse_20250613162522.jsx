@@ -22,7 +22,7 @@ const AddCourse = () => {
         try {
             const res = await
                 axios
-                    .post('http://localhost:3000/all-course', newCourse);
+                    .post('https://academix-hub-server.vercel.app/all-course', newCourse);
             const data = res.data;
 
             if (data.insertedId) {

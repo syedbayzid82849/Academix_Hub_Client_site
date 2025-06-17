@@ -9,7 +9,7 @@ const MyEnrolled = () => {
 
     useEffect(() => {
         if (user?.email) {
-            axios.get(`http://localhost:3000/all-course/${user.email}`)
+            axios.get(`https://academix-hub-server.vercel.app/all-course/${user.email}`)
                 .then(res => {
                     console.log(res);
                     setMyEnroll(res.data)

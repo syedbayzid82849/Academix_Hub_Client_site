@@ -26,7 +26,7 @@ const CourseDetails = () => {
         axios.get('')
 
         axios
-            .post('http://localhost:3000/enrollled-users', enrolledUserDetails )
+            .post('https://academix-hub-server.vercel.app/enrollled-users', enrolledUserDetails )
             .then(res => {
                 console.log(res);
                 Swal.fire({

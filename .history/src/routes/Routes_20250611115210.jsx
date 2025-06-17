@@ -13,7 +13,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                loader: () => fetch('http://localhost:3000/all-course'),
+                loader: () => fetch('https://academix-hub-server.vercel.app/all-course'),
                 element: <Home></Home>
             },
             {
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/course-details/:id',
-                loader: ({ params }) => fetch(`http://localhost:3000/courses/${params.id}`),
+                loader: ({ params }) => fetch(`https://academix-hub-server.vercel.app/courses/${params.id}`),
                 element: 
             },
             {

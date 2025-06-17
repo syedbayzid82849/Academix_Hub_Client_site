@@ -17,14 +17,14 @@ const AddCourse = () => {
         console.log(newCourse);
 
         // send course data to the database
-        axios.post('http://localhost:3000/all-course', DATA)
+        axios.post('https://academix-hub-server.vercel.app/all-course', DATA)
             .then(res => {
                 // success code
             })
             .catch(err => {
                 // error handle
             });
-        fetch('http://localhost:3000/all-course',
+        fetch('https://academix-hub-server.vercel.app/all-course',
             {
                 method: 'POST',
                 headers: {

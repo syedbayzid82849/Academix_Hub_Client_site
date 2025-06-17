@@ -9,7 +9,7 @@ const ManageCourse = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/menage-course/${user?}`)
+        axios.get(`https://academix-hub-server.vercel.app/menage-course/${user?}`)
         .then(res => {
             console.log(res);
         })

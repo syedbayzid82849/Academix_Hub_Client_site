@@ -10,7 +10,7 @@ const ManageCourse = () => {
     const { email } = user;
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/menage-course/${email/}`)
+        axios.get(`https://academix-hub-server.vercel.app/menage-course/${email/}`)
     }, [third])
 
 

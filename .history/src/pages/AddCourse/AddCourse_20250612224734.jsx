@@ -17,7 +17,7 @@ const AddCourse = () => {
         console.log(newCourse);
 
         // send course data to the database
-        axios.post('http://localhost:3000/all-course', newCourse)
+        axios.post('https://academix-hub-server.vercel.app/all-course', newCourse)
             .then(res => {
                 res.json()
             })

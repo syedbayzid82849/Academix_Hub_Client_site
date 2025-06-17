@@ -20,7 +20,7 @@ const EditCourse = () => {
         const formData = new FormData(form);
         const newCourse = Object.fromEntries(formData.entries());
 
-        axios.patch(`http://localhost:3000/all-course/684b9ffcd5ef6f3ba22788b0`)
+        axios.patch(`https://academix-hub-server.vercel.app/all-course/684b9ffcd5ef6f3ba22788b0`)
 
     }
 

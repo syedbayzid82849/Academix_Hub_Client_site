@@ -27,7 +27,7 @@ const AddCourse = () => {
         console.log(newCourse);
 
         // send course data to the database
-        fetch('http://localhost:3000/add-course',
+        fetch('https://academix-hub-server.vercel.app/add-course',
             {
                 method: 'POST',
                 headers: {

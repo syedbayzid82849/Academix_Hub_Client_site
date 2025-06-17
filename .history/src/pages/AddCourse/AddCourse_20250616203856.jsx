@@ -20,7 +20,7 @@ const AddCourse = () => {
         const newCourse = Object.fromEntries(formData.entries());
         console.log(newCourse);
         axios
-            .post('http://localhost:3000/all-course', newCourse)
+            .post('https://academix-hub-server.vercel.app/all-course', newCourse)
             .then(res => {
                 console.log(res);
                 Swal.fire({

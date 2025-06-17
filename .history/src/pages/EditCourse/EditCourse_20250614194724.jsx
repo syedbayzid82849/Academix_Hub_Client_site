@@ -29,7 +29,7 @@ const EditCourse = () => {
     };
 
     try {
-      const res = await axios.put(`http://localhost:3000/courses/${course._id}`, updatedCourse);
+      const res = await axios.put(`https://academix-hub-server.vercel.app/courses/${course._id}`, updatedCourse);
       if (res.data.modifiedCount > 0) {
         Swal.fire('Success', 'Course updated successfully!', 'success');
         navigate('/dashboard/manage-courses');

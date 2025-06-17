@@ -12,12 +12,12 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                loader: () => fetch('http://localhost:3000/all-course'),
+                loader: () => fetch('https://academix-hub-server.vercel.app/all-course'),
                 element: <Home></Home>
             },
             {
                 path: '/courses',
-                loader: () => fetch('http://localhost:3000/all-course'),
+                loader: () => fetch('https://academix-hub-server.vercel.app/all-course'),
                 element: <Courses></Courses>
             },
             {

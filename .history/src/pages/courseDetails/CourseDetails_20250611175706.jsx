@@ -16,7 +16,7 @@ const CourseDetails = () => {
     useEffect(() => {
         if (user) {
             axios
-                .get(`http://localhost:3000/enrollments?userEmail=${user.email}&courseId=${_id}`)
+                .get(`https://academix-hub-server.vercel.app/enrollments?userEmail=${user.email}&courseId=${_id}`)
                 .then(res => {
                     if (res.data?.enrolled) {
                         setIsEnrolled(true);
@@ -38,7 +38,7 @@ const CourseDetails = () => {
         };
 
         try {
-            const res = await axios.post('http://localhost:3000/enrollments', enrollmentData);
+            const res = await axios.post('https://academix-hub-server.vercel.app/enrollments', enrollmentData);
             if (res.data.success) {
                 setIsEnrolled(true);
                 setEnrolledCount(prev => prev + 1);

@@ -29,7 +29,7 @@ const CourseDetails = () => {
             image
         };
 
-        fetch('http://localhost:3000/enroll', {
+        fetch('https://academix-hub-server.vercel.app/enroll', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

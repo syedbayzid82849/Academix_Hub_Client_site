@@ -24,13 +24,13 @@ const CourseDetails = () => {
     const handleEnrollBtn = () => {
         // setIsEnrolled(true);
 
-        axios.get('http://localhost:3000/all-course/:id' , id)
+        axios.get('https://academix-hub-server.vercel.app/all-course/:id' , id)
         .then(res =>{
             console.log(res);
         })
 
         axios
-            .post('http://localhost:3000/enrollled-users', enrolledUserDetails )
+            .post('https://academix-hub-server.vercel.app/enrollled-users', enrolledUserDetails )
             .then(res => {
                 console.log(res);
                 Swal.fire({

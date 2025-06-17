@@ -27,7 +27,7 @@ const AddCourse = () => {
 
         // API call to submit newCourse
         try {
-            const response = await fetch('http://localhost:3000/add-course', {
+            const response = await fetch('https://academix-hub-server.vercel.app/add-course', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

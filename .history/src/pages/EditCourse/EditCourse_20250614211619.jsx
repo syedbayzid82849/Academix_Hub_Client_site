@@ -21,7 +21,7 @@ const EditCourse = () => {
         const newCourse = Object.fromEntries(formData.entries());
 
         // update Course
-        axios.patch(`http://localhost:3000/all-course/${_id}`, newCourse)
+        axios.patch(`https://academix-hub-server.vercel.app/all-course/${_id}`, newCourse)
         .then(res => {
             
         })

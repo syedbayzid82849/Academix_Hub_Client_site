@@ -18,7 +18,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                loader: () => fetch('http://localhost:3000/all-course'),
+                loader: () => fetch('https://academix-hub-server.vercel.app/all-course'),
                 element: <Home></Home>
             },
             {
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/all-course/:id',
-                loader: ({ params }) => fetch(`http://localhost:3000/all-course/${params.id}`),
+                loader: ({ params }) => fetch(`https://academix-hub-server.vercel.app/all-course/${params.id}`),
                 element: <CourseDetails></CourseDetails>
             },
             {
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/manage-courses',
-                loader: ({ params }) => fetch(`http://localhost:3000/menage-course/${params.email}`),
+                loader: ({ params }) => fetch(`https://academix-hub-server.vercel.app/menage-course/${params.email}`),
                 element:
                     <PrivateRoute>
                         <ManageCourse></ManageCourse>
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/edit-course/:id',
-                loader: ({ params }) => fetch(`http://localhost:3000/all-course/${params.id}`),
+                loader: ({ params }) => fetch(`https://academix-hub-server.vercel.app/all-course/${params.id}`),
                 element:
                     <PrivateRoute>
                         <EditCourse></EditCourse>
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/myEnrolled',
-                loader: ({ params }) => fetch(`http://localhost:3000/menage-course/${params.email}`),
+                loader: ({ params }) => fetch(`https://academix-hub-server.vercel.app/menage-course/${params.email}`),
                 element: <
             },
             {

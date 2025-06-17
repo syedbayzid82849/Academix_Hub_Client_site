@@ -18,7 +18,7 @@ const CourseDetails = () => {
         setIsEnrolled(true);
 
         axios
-            .post('http://localhost:3000/enro', newCourse)
+            .post('https://academix-hub-server.vercel.app/enro', newCourse)
             .then(res => {
                 console.log(res);
                 Swal.fire({

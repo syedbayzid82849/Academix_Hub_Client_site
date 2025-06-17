@@ -10,7 +10,7 @@ const MyEnrolled = () => {
 
     useEffect(() => {
         if (user?.email) {
-            ax(`http://localhost:3000/my-groups/${user.email}`, {
+            ax(`https://academix-hub-server.vercel.app/my-groups/${user.email}`, {
                 headers: {
                     authorization: `Bearer ${token}`
                 }

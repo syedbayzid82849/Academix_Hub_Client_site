@@ -24,7 +24,7 @@ const AddCourse = () => {
             .catch(err => {
                 // error handle
             });
-        fetch('http://localhost:3000/all-course',
+        fetch('https://academix-hub-server.vercel.app/all-course',
             {
                 method: 'POST',
                 headers: {
