@@ -4,6 +4,9 @@ Academix-Hub
 ## Project Objective
 Academix-Hub is a fully functional course management system where students can browse courses, view details, enroll, and manage their enrolled courses. Instructors can manage their created courses through a secure dashboard.
 
+## Server URL
+https://github.com/syedbayzid82849/Academix_Hub_Server_site.git
+
 ## Live URL
 https://academix-hub.netlify.app/
 
