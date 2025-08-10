@@ -38,7 +38,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/manage-courses',
-                loader: () => fetch('http://localhost:3000'),
+                loader: () => fetch('https://academix-hub-server.vercel.app'),
                 element:
                     <PrivateRoute>
                         <ManageCourse></ManageCourse>
