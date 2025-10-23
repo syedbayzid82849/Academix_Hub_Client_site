@@ -40,8 +40,8 @@ const Profile = () => {
     const { name, title, bio, followers, following, bannerUrl, avatarUrl, socialLinks } = profileData;
 
     return (
-        <div className=" flex items-center justify-center p-4 font-inter">
-            <div className="w-full  bg-white shadow-xl rounded-xl overflow-hidden transform hover:shadow-2xl transition duration-500 ease-in-out">
+        <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4 font-inter">
+            <div className="w-full max-w-sm bg-white shadow-xl rounded-xl overflow-hidden transform hover:shadow-2xl transition duration-500 ease-in-out">
 
                 {/* Banner */}
                 <div className="relative">
@@ -64,7 +64,7 @@ const Profile = () => {
                 </div>
 
                 {/* Content */}
-                <div className="min-h-screen text-center pt-16 pb-6 px-6">
+                <div className="text-center pt-16 pb-6 px-6">
                     <h2 className="text-2xl font-bold text-gray-800 mt-2">{name}</h2>
                     <p className="text-sm text-blue-600 font-medium uppercase">{title}</p>
 

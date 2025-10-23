@@ -64,7 +64,7 @@ const Profile = () => {
                 </div>
 
                 {/* Content */}
-                <div className="min-h-screen text-center pt-16 pb-6 px-6">
+                <div className="ma text-center pt-16 pb-6 px-6">
                     <h2 className="text-2xl font-bold text-gray-800 mt-2">{name}</h2>
                     <p className="text-sm text-blue-600 font-medium uppercase">{title}</p>
 
