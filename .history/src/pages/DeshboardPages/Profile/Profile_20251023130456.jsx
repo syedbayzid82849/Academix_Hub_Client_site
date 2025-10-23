@@ -1,7 +1,5 @@
 import React from 'react';
-import { Facebook, Twitter, Linkedin, Dribbble, Globe } from 'lucide-react';
-import { AuthContext } from '../../../context/AuthContext';
-import { useContext } from 'react';
+import { Facebook, Twitter, Linkedin, Dribbble } from 'lucide-react';
 
 const Profile = () => {
     const profileData = {
@@ -19,13 +17,15 @@ const Profile = () => {
             { name: 'Dribbble', url: '#' },
         ]
     };
+    
     // Map social media names to Lucide icons
     const SocialIconMap = {
         'Facebook': Facebook,
         'Twitter': Twitter,
         'LinkedIn': Linkedin,
-        'Dribbble': Globe
+        'Dribbble': Dribbble
     };
+    
     const SocialLink = ({ Icon, url }) => (
         <a
             href={url}
@@ -37,11 +37,9 @@ const Profile = () => {
         </a>
     );
     const { name, title, bio, followers, following, bannerUrl, avatarUrl, socialLinks } = profileData;
-    const { user } = useContext(AuthContext);
 
     return (
-        <div className=" flex items-center justify-center p-4 font-inter">
-            <div className="w-full  bg-white shadow-xl rounded-xl overflow-hidden transform hover:shadow-2xl transition duration-500 ease-in-out">
+        <div className="flex items-center justify-center p-4 font-inter">            <div className="w-full  bg-white shadow-xl rounded-xl overflow-hidden transform hover:shadow-2xl transition duration-500 ease-in-out">
 
                 {/* Banner */}
                 <div className="relative">

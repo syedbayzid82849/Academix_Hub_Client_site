@@ -1,43 +1,42 @@
 import React from 'react';
 import { Facebook, Twitter, Linkedin, Dribbble, Globe } from 'lucide-react';
-import { AuthContext } from '../../../context/AuthContext';
-import { useContext } from 'react';
 
+
+const profileData = {
+    name: "Apurbo Akhond",
+    title: "UI/UX Designer",
+    bio: "Passionate designer creating modern and user-friendly web experiences. Always exploring creative design solutions.",
+    followers: 78,
+    following: 12,
+    bannerUrl: "https://placehold.co/800x250/1E40AF/1D4ED8?text=Blue+Wave+Design",
+    avatarUrl: "https://placehold.co/128x128/374151/ffffff?text=AA",
+    socialLinks: [
+        { name: 'Facebook', url: '#' },
+        { name: 'Twitter', url: '#' },
+        { name: 'LinkedIn', url: '#' },
+        { name: 'Dribbble', url: '#' },
+    ]
+};
+
+// Map social media names to Lucide icons
+const SocialIconMap = {
+    'Facebook': Facebook,
+    'Twitter': Twitter,
+    'LinkedIn': Linkedin,
+    'Dribbble': Dribbble};
+
+const SocialLink = ({ Icon, url }) => (
+    <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-gray-400 hover:text-blue-600 transition duration-300 mx-3 p-2 rounded-full hover:bg-blue-50"
+    >
+        <Icon size={20} />
+    </a>
+);
 const Profile = () => {
-    const profileData = {
-        name: "Apurbo Akhond",
-        title: "UI/UX Designer",
-        bio: "Passionate designer creating modern and user-friendly web experiences. Always exploring creative design solutions.",
-        followers: 78,
-        following: 12,
-        bannerUrl: "https://placehold.co/800x250/1E40AF/1D4ED8?text=Blue+Wave+Design",
-        avatarUrl: "https://placehold.co/128x128/374151/ffffff?text=AA",
-        socialLinks: [
-            { name: 'Facebook', url: '#' },
-            { name: 'Twitter', url: '#' },
-            { name: 'LinkedIn', url: '#' },
-            { name: 'Dribbble', url: '#' },
-        ]
-    };
-    // Map social media names to Lucide icons
-    const SocialIconMap = {
-        'Facebook': Facebook,
-        'Twitter': Twitter,
-        'LinkedIn': Linkedin,
-        'Dribbble': Globe
-    };
-    const SocialLink = ({ Icon, url }) => (
-        <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-blue-600 transition duration-300 mx-3 p-2 rounded-full hover:bg-blue-50"
-        >
-            <Icon size={20} />
-        </a>
-    );
     const { name, title, bio, followers, following, bannerUrl, avatarUrl, socialLinks } = profileData;
-    const { user } = useContext(AuthContext);
 
     return (
         <div className=" flex items-center justify-center p-4 font-inter">
@@ -64,8 +63,7 @@ const Profile = () => {
                 </div>
 
                 {/* Content */}
-                <div className="min-h-screen text-center pt-16 pb-6 px-6">
-                    <h2 className="text-2xl font-bold text-gray-800 mt-2">{name}</h2>
+                <div className="text-center pt-16 pb-6 px-6">                    <h2 className="text-2xl font-bold text-gray-800 mt-2">{name}</h2>
                     <p className="text-sm text-blue-600 font-medium uppercase">{title}</p>
 
                     <p className="text-gray-500 mt-4 mb-6 text-sm leading-relaxed max-w-xs mx-auto">

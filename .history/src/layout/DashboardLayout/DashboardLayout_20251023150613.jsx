@@ -11,45 +11,10 @@ import {
   Settings,
   CheckCircle,
 } from "lucide-react";
-import Swal from "sweetalert2";
-import { AuthContext } from "../../context/AuthContext";
-import { useContext } from "react";
 
 const DashboardLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleSidebar = () => setIsOpen(!isOpen);
-  const {signOutUser } = useContext(AuthContext);
-
-  const handleSignOut = () => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You will be logged out!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, Logout"
-    }).then((result) => {
-      if (result.isConfirmed) {
-        signOutUser()
-          .then(() => {
-            Swal.fire({
-              title: "Logged Out!",
-              text: "You have been logged out successfully.",
-              icon: "success"
-            });
-          })
-          .catch(error => {
-            console.log(error);
-            Swal.fire({
-              title: "Error!",
-              text: "Something went wrong during logout.",
-              icon: "error"
-            });
-          });
-      }
-    });
-  };
 
   return (
     <div className="flex min-h-screen ">
@@ -131,28 +96,29 @@ const DashboardLayout = () => {
           >
             <User size={18} /> My Profile
           </NavLink>
-          <NavLink
-            onClick={handleSignOut}
-            className="flex items-center gap-2 hover:text-red-400 mt-auto"
-          >
-            <LogOut size={18} /> Logout
-          </NavLink>
 
-        </nav>
-      </div>
+        <NavLink
+          onClick={handleSignOut}
+          className="flex items-center gap-2 hover:text-red-400 mt-auto"
+        >
+          <LogOut size={18} /> Logout
+        </NavLink>
 
-      {/* Mobile Navbar */}
-      <div className="fixed md:hidden bg-blue-900 text-white w-full flex justify-between items-center p-4 z-40">
-        <h2 className="text-lg font-semibold">Academic Hub</h2>
-        <button onClick={toggleSidebar} className="text-white">
-          <Menu size={24} />
-        </button>
-      </div>
+      </nav>
+    </div>
 
-      {/* Main Content */}
-      <div className="flex-1 md:ml-64 mt-16 md:mt-0 transition-all duration-300">
-        <Outlet />
-      </div>
+      {/* Mobile Navbar */ }
+  <div className="fixed md:hidden bg-blue-900 text-white w-full flex justify-between items-center p-4 z-40">
+    <h2 className="text-lg font-semibold">Academic Hub</h2>
+    <button onClick={toggleSidebar} className="text-white">
+      <Menu size={24} />
+    </button>
+  </div>
+
+  {/* Main Content */ }
+  <div className="flex-1 md:ml-64 mt-16 md:mt-0 transition-all duration-300">
+    <Outlet />
+  </div>
     </div >
   );
 };

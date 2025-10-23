@@ -11,45 +11,11 @@ import {
   Settings,
   CheckCircle,
 } from "lucide-react";
-import Swal from "sweetalert2";
-import { AuthContext } from "../../context/AuthContext";
-import { useContext } from "react";
 
 const DashboardLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleSidebar = () => setIsOpen(!isOpen);
-  const {signOutUser } = useContext(AuthContext);
 
-  const handleSignOut = () => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You will be logged out!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, Logout"
-    }).then((result) => {
-      if (result.isConfirmed) {
-        signOutUser()
-          .then(() => {
-            Swal.fire({
-              title: "Logged Out!",
-              text: "You have been logged out successfully.",
-              icon: "success"
-            });
-          })
-          .catch(error => {
-            console.log(error);
-            Swal.fire({
-              title: "Error!",
-              text: "Something went wrong during logout.",
-              icon: "error"
-            });
-          });
-      }
-    });
-  };
 
   return (
     <div className="flex min-h-screen ">

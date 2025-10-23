@@ -18,7 +18,7 @@ import { useContext } from "react";
 const DashboardLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleSidebar = () => setIsOpen(!isOpen);
-  const {signOutUser } = useContext(AuthContext);
+  const { signOutUser } = useContext(AuthContext);
 
   const handleSignOut = () => {
     Swal.fire({

@@ -1,7 +1,5 @@
 import React from 'react';
 import { Facebook, Twitter, Linkedin, Dribbble, Globe } from 'lucide-react';
-import { AuthContext } from '../../../context/AuthContext';
-import { useContext } from 'react';
 
 const Profile = () => {
     const profileData = {
@@ -37,7 +35,6 @@ const Profile = () => {
         </a>
     );
     const { name, title, bio, followers, following, bannerUrl, avatarUrl, socialLinks } = profileData;
-    const { user } = useContext(AuthContext);
 
     return (
         <div className=" flex items-center justify-center p-4 font-inter">

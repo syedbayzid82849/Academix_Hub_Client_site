@@ -37,7 +37,7 @@ const Profile = () => {
         </a>
     );
     const { name, title, bio, followers, following, bannerUrl, avatarUrl, socialLinks } = profileData;
-    const { user } = useContext(AuthContext);
+    const { user, signOutUser } = useContext(AuthContext);
 
     return (
         <div className=" flex items-center justify-center p-4 font-inter">

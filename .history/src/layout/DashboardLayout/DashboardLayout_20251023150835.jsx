@@ -13,12 +13,11 @@ import {
 } from "lucide-react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../context/AuthContext";
-import { useContext } from "react";
 
 const DashboardLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleSidebar = () => setIsOpen(!isOpen);
-  const {signOutUser } = useContext(AuthContext);
+  const { user, signOutUser } = useContext(AuthContext);
 
   const handleSignOut = () => {
     Swal.fire({

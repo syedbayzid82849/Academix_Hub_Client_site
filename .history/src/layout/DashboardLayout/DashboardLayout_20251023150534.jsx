@@ -11,45 +11,10 @@ import {
   Settings,
   CheckCircle,
 } from "lucide-react";
-import Swal from "sweetalert2";
-import { AuthContext } from "../../context/AuthContext";
-import { useContext } from "react";
 
 const DashboardLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleSidebar = () => setIsOpen(!isOpen);
-  const {signOutUser } = useContext(AuthContext);
-
-  const handleSignOut = () => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You will be logged out!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, Logout"
-    }).then((result) => {
-      if (result.isConfirmed) {
-        signOutUser()
-          .then(() => {
-            Swal.fire({
-              title: "Logged Out!",
-              text: "You have been logged out successfully.",
-              icon: "success"
-            });
-          })
-          .catch(error => {
-            console.log(error);
-            Swal.fire({
-              title: "Error!",
-              text: "Something went wrong during logout.",
-              icon: "error"
-            });
-          });
-      }
-    });
-  };
 
   return (
     <div className="flex min-h-screen ">
@@ -131,12 +96,19 @@ const DashboardLayout = () => {
           >
             <User size={18} /> My Profile
           </NavLink>
+
           <NavLink
-            onClick={handleSignOut}
+            onClick=(handleSignOut)
             className="flex items-center gap-2 hover:text-red-400 mt-auto"
           >
             <LogOut size={18} /> Logout
           </NavLink>
+          <NavLink
+  onClick={handleSignOut}
+  className="flex items-center gap-2 hover:text-red-400 mt-auto"
+>
+  <LogOut size={18} /> Logout
+</NavLink>
 
         </nav>
       </div>
@@ -153,7 +125,7 @@ const DashboardLayout = () => {
       <div className="flex-1 md:ml-64 mt-16 md:mt-0 transition-all duration-300">
         <Outlet />
       </div>
-    </div >
+    </div>
   );
 };
 
