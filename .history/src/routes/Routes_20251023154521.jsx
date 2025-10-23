@@ -15,7 +15,6 @@ import DashboardLayout from "../layout/DashboardLayout/DashboardLayout";
 import ManageCourse from "../pages/MenageCourse/MenageCourse";
 import DashboardHome from "../pages/DashboardPages/DashboardHome/DashboardHome";
 import Profile from "../pages/DashboardPages/Profile/Profile";
-import { Membership } from "../pages/membership/Membership";
 
 const router = createBrowserRouter([
     {
@@ -32,8 +31,13 @@ const router = createBrowserRouter([
                 element: <AllCourse />
             },
             {
-                path: "/membership",
-                element: <Membership />
+path
+
+
+
+
+
+
             },
             {
                 path: '/courseDetails/:id',

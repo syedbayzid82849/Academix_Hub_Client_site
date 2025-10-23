@@ -32,8 +32,8 @@ const router = createBrowserRouter([
                 element: <AllCourse />
             },
             {
-                path: "/membership",
-                element: <Membership />
+path:"/membership", 
+element: <Membership />
             },
             {
                 path: '/courseDetails/:id',

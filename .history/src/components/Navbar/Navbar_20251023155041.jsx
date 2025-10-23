@@ -34,13 +34,8 @@ const Navbar = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink
-                    to="/membership"
-                    className={({ isActive }) =>
-                        isActive ? "text-violet-600 dark:text-violet-400 font-semibold" : "text-gray-800 dark:text-gray-200 hover:text-violet-600 dark:hover:text-violet-400"
-                    }
-                >
-                    Membership
+                <NavLink>
+                    to="
                 </NavLink>
             </li>
             <li>

@@ -13,9 +13,8 @@ import MyEnrolled from "../pages/MyEnrolled/MyEnrolled";
 import FAQs from "../pages/FAQs/FAQs";
 import DashboardLayout from "../layout/DashboardLayout/DashboardLayout";
 import ManageCourse from "../pages/MenageCourse/MenageCourse";
-import DashboardHome from "../pages/DashboardPages/DashboardHome/DashboardHome";
-import Profile from "../pages/DashboardPages/Profile/Profile";
-import { Membership } from "../pages/membership/Membership";
+import DashboardHome from "../pages/DeshboardPages/DashboardHome/DashboardHome";
+import Profile from "../pages/DeshboardPages/Profile/Profile";
 
 const router = createBrowserRouter([
     {
@@ -30,10 +29,6 @@ const router = createBrowserRouter([
             {
                 path: "/courses",
                 element: <AllCourse />
-            },
-            {
-                path: "/membership",
-                element: <Membership />
             },
             {
                 path: '/courseDetails/:id',

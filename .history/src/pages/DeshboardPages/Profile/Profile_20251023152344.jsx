@@ -54,7 +54,7 @@ const Profile = () => {
                     <div className="absolute top-full left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                         <div className="p-1 bg-white rounded-full shadow-lg">
                             <img
-                                src={avatarUrl}
+                                src={user?.photoURL}
                                 alt={`${name}'s Avatar`}
                                 className="w-28 h-28 object-cover rounded-full border-4 border-white"
                                 onError={(e) => (e.target.src = "https://placehold.co/112x112/374151/ffffff?text=AA")}

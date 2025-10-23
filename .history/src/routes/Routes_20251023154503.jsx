@@ -15,7 +15,6 @@ import DashboardLayout from "../layout/DashboardLayout/DashboardLayout";
 import ManageCourse from "../pages/MenageCourse/MenageCourse";
 import DashboardHome from "../pages/DashboardPages/DashboardHome/DashboardHome";
 import Profile from "../pages/DashboardPages/Profile/Profile";
-import { Membership } from "../pages/membership/Membership";
 
 const router = createBrowserRouter([
     {
@@ -31,10 +30,7 @@ const router = createBrowserRouter([
                 path: "/courses",
                 element: <AllCourse />
             },
-            {
-                path: "/membership",
-                element: <Membership />
-            },
+            
             {
                 path: '/courseDetails/:id',
                 loader: ({ params }) => fetch(`https://academix-hub-server.vercel.app/courseDetails/${params.id}`),
