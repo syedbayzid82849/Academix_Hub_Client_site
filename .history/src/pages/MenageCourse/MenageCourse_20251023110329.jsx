@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import { motion } from 'framer-motion';
-import { HelmetProvider } from 'react-helmet-async';
+import { Hemet, HelmetProvider } from 'react-helmet-async';
 
 
 const ManageCourse = () => {

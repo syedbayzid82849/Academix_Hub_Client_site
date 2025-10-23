@@ -2,8 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { HelmetProvider } from 'react-helmet-async';
-import { motion } from 'framer-motion';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const MyEnrolled = () => {
     const { user } = useContext(AuthContext);
@@ -65,12 +64,7 @@ const MyEnrolled = () => {
     };
 
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="md:my-16 md:px-4  mx-auto"
-        >
+        <div className=" px-4 max-w-5xl mx-auto">
             <HelmetProvider>
                 <title>My Enrolled | Academix Hub</title>
             </HelmetProvider>
@@ -79,12 +73,12 @@ const MyEnrolled = () => {
                 <p>You have not enrolled in any courses yet.</p>
             ) : (
                 <div className="overflow-x-auto">
-                    <table className="min-w-full border border-gray-300 text-sm">
-                        <thead className="bg-gray-200 text-left">
-                            <tr>
-                                <th className="p-2 border text-black">Title</th>
-                                <th className="p-2 border text-black">Description</th>
-                                <th className="p-2 border text-black">Actions</th>
+                    <table className="min-w-full border">
+                        <thead>
+                            <tr className=" text-left">
+                                <th className="p-2 border">Title</th>
+                                <th className="p-2 border">Instructor</th>
+                                <th className="p-2 border">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -106,7 +100,7 @@ const MyEnrolled = () => {
                     </table>
                 </div>
             )}
-        </motion.div>
+        </div>
     );
 };
 

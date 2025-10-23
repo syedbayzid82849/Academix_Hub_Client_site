@@ -75,14 +75,6 @@ const router = createBrowserRouter([
                     </PrivateRoute>
             },
             {
-                path: '/dashboard/manage-courses',
-                loader: ({ params }) => fetch(`https://academix-hub-server.vercel.app/menage-course/${params.email}`),
-                element:
-                    <PrivateRoute>
-                        <ManageCourse></ManageCourse>
-                    </PrivateRoute>
-            },
-            {
                 path: '/dashboard/myEnrolls',
                 loader: ({ params }) => fetch(`https://academix-hub-server.vercel.app/my-enrolls/${params.email}`),
                 element:

@@ -31,6 +31,7 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`https://academix-hub-server.vercel.app/courseDetails/${params.id}`),
                 element: <CourseDetails></CourseDetails>
             },
+
             {
                 path: '/edit-course/:id',
                 loader: ({ params }) => fetch(`https://academix-hub-server.vercel.app/edit-course/${params.id}`),
@@ -72,14 +73,6 @@ const router = createBrowserRouter([
                 element:
                     <PrivateRoute>
                         <AddCourse></AddCourse>
-                    </PrivateRoute>
-            },
-            {
-                path: '/dashboard/manage-courses',
-                loader: ({ params }) => fetch(`https://academix-hub-server.vercel.app/menage-course/${params.email}`),
-                element:
-                    <PrivateRoute>
-                        <ManageCourse></ManageCourse>
                     </PrivateRoute>
             },
             {

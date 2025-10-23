@@ -3,7 +3,6 @@ import { AuthContext } from '../../context/AuthContext';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { HelmetProvider } from 'react-helmet-async';
-import { motion } from 'framer-motion';
 
 const MyEnrolled = () => {
     const { user } = useContext(AuthContext);

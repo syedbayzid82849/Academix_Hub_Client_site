@@ -45,7 +45,7 @@ const AllCourse = () => {
 
             <h2 className="text-3xl font-bold text-center mb-10 dark:text-white">Our Courses</h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {courses.map(({ title, image, _id, createdAt }) => (
                     <motion.div
                         key={_id}
@@ -60,7 +60,7 @@ const AllCourse = () => {
                             alt={title}
                             className="w-full h-48 object-cover"
                         />
-                        <div className="p-4 flex flex-col">
+                        <div className="p-4 flex flex-col flex-grow">
                             <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{title}</h3>
                             <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
                                 Added: {new Date(createdAt).toLocaleDateString()}

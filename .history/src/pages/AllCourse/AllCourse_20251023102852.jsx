@@ -60,7 +60,7 @@ const AllCourse = () => {
                             alt={title}
                             className="w-full h-48 object-cover"
                         />
-                        <div className="p-4 flex flex-col">
+                        <div className="p-4 flex flex-col flex-grow">
                             <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{title}</h3>
                             <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
                                 Added: {new Date(createdAt).toLocaleDateString()}

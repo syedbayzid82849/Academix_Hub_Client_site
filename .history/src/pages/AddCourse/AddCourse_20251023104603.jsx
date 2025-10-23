@@ -41,7 +41,7 @@ const AddCourse = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mx-4 p-8 md:p-12 bg-gray-800 shadow-lg rounded-3xl my-16"
+            className="max-w-4xl mx-auto p-8 md:p-12 bg-gray-800 shadow-lg rounded-3xl my-16"
         >
             <HelmetProvider>
                 <Helmet>

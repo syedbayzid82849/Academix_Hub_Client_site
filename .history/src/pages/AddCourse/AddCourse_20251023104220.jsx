@@ -1,47 +1,57 @@
-import React, { useContext } from 'react';
-import { motion } from 'framer-motion';
-import Lottie from 'lottie-react';
-import animationData from '../../assets/add a course animation.json'; // replace with your actual Lottie JSON
-import Swal from 'sweetalert2';
-import { AuthContext } from '../../context/AuthContext';
-import axios from 'axios';
-import { useNavigate } from 'react-router';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import React, { useContext } from "react";
+import { motion } from "framer-motion";
+import Lottie from "lottie-react";
+import animationData from "../../assets/add a course animation.json";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../context/AuthContext";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const AddCourse = () => {
     const { user } = useContext(AuthContext);
     const { email, displayName } = user;
     const navigate = useNavigate();
 
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
         const newCourse = Object.fromEntries(formData.entries());
-        console.log(newCourse);
-        axios
-            .post('https://academix-hub-server.vercel.app/all-course', newCourse)
-            .then(res => {
-                console.log(res);
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Course Added!',
-                    text: 'Your course has been successfully created.',
-                    confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
-                });
 
-            })
-            .catch(err => console.log(err));
-        navigate('/')
-    }
+        try {
+            const res = await axios.post(
+                "https://academix-hub-server.vercel.app/all-course",
+                newCourse
+            );
+
+            Swal.fire({
+                icon: "success",
+                title: "Course Added!",
+                text: "Your course has been successfully created.",
+                confirmButtonColor: "#3085d6",
+                confirmButtonText: "OK",
+            });
+
+            navigate("/dashboard/courses");
+        } catch (err) {
+            console.error(err);
+            Swal.fire({
+                icon: "error",
+                title: "Error!",
+                text: "Something went wrong. Try again.",
+                confirmButtonColor: "#d33",
+                confirmButtonText: "OK",
+            });
+        }
+    };
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mx-4 p-8 md:p-12 bg-gray-800 shadow-lg rounded-3xl my-16"
+            className="max-w-4xl mx-auto p-8 md:p-12 bg-white shadow-lg rounded-3xl my-16"
         >
             <HelmetProvider>
                 <Helmet>

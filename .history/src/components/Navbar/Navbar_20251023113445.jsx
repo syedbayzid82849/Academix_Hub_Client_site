@@ -134,7 +134,7 @@ const Navbar = () => {
                         user ? (
                             <>
                                 <div className="tooltip tooltip-bottom" data-tip={user?.displayName || "User"}>
-                                    <NavLink to="/dashboard/profile">
+                                    <NavLink to="/profile">
                                         {user?.photoURL ? (
                                             <img
                                                 className="w-10 h-10 border border-black rounded-full object-cover"

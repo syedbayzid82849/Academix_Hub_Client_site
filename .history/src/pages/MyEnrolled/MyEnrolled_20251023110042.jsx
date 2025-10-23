@@ -2,8 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { HelmetProvider } from 'react-helmet-async';
-import { motion } from 'framer-motion';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const MyEnrolled = () => {
     const { user } = useContext(AuthContext);
@@ -74,10 +73,8 @@ const MyEnrolled = () => {
             <HelmetProvider>
                 <title>My Enrolled | Academix Hub</title>
             </HelmetProvider>
-            <h2 className="text-2xl font-bold mb-4">My Enrolled Courses</h2>
-            {myEnroll.length === 0 ? (
-                <p>You have not enrolled in any courses yet.</p>
-            ) : (
+            <div className="p-1.5 lg:p-4">
+                <h2 className="text-2xl font-bold mb-4">My Added Courses</h2>
                 <div className="overflow-x-auto">
                     <table className="min-w-full border border-gray-300 text-sm">
                         <thead className="bg-gray-200 text-left">
@@ -106,8 +103,8 @@ const MyEnrolled = () => {
                     </table>
                 </div>
             )}
-        </motion.div>
-    );
+            </div>
+            );
 };
 
-export default MyEnrolled;
+            export default MyEnrolled;

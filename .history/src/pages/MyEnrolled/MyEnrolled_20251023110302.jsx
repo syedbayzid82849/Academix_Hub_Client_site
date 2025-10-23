@@ -2,8 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { HelmetProvider } from 'react-helmet-async';
-import { motion } from 'framer-motion';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const MyEnrolled = () => {
     const { user } = useContext(AuthContext);
@@ -71,7 +70,7 @@ const MyEnrolled = () => {
             transition={{ duration: 0.6 }}
             className="md:my-16 md:px-4  mx-auto"
         >
-            <HelmetProvider>
+                        <HelmetProvider>
                 <title>My Enrolled | Academix Hub</title>
             </HelmetProvider>
             <h2 className="text-2xl font-bold mb-4">My Enrolled Courses</h2>
