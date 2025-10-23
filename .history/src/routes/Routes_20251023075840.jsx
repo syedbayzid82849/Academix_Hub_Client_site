@@ -12,9 +12,8 @@ import EditCourse from "../pages/EditCourse/EditCourse";
 import MyEnrolled from "../pages/MyEnrolled/MyEnrolled";
 import FAQs from "../pages/FAQs/FAQs";
 import DashboardLayout from "../layout/DashboardLayout/DashboardLayout";
-import ManageCourse from "../pages/MenageCourse/MenageCourse";
 import DashboardHome from "../pages/DeshboardPages/DashboardHome/DashboardHome";
-import Profile from "../pages/DeshboardPages/Profile/Profile";
+import ManageCourse from "../pages/MenageCourse/MenageCourse";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +24,10 @@ const router = createBrowserRouter([
                 path: "/",
                 loader: () => fetch('https://academix-hub-server.vercel.app/all-course'),
                 element: <Home></Home>
+            },
+            {
+                path: '/courses',
+                element: <AllCourse></AllCourse>
             },
             {
                 path: '/courseDetails/:id',
@@ -89,7 +92,7 @@ const router = createBrowserRouter([
         ),
         children: [
             { path: "/dashboard", element: <DashboardHome /> },
-            { path: "/dashboard/courses", element: <AllCourse /> },
+            { path: "/dashboard/courses", element: <MyCourses /> },
             { path: "/dashboard/profile", element: <Profile /> },
         ],
     }
@@ -97,3 +100,4 @@ const router = createBrowserRouter([
 ]);
 
 export default router;
+b

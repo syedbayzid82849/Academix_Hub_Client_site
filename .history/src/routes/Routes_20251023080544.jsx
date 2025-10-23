@@ -14,7 +14,6 @@ import FAQs from "../pages/FAQs/FAQs";
 import DashboardLayout from "../layout/DashboardLayout/DashboardLayout";
 import ManageCourse from "../pages/MenageCourse/MenageCourse";
 import DashboardHome from "../pages/DeshboardPages/DashboardHome/DashboardHome";
-import Profile from "../pages/DeshboardPages/Profile/Profile";
 
 const router = createBrowserRouter([
     {
@@ -89,7 +88,7 @@ const router = createBrowserRouter([
         ),
         children: [
             { path: "/dashboard", element: <DashboardHome /> },
-            { path: "/dashboard/courses", element: <AllCourse /> },
+            { path: "/dashboard/courses", element: < /> },
             { path: "/dashboard/profile", element: <Profile /> },
         ],
     }
@@ -97,3 +96,4 @@ const router = createBrowserRouter([
 ]);
 
 export default router;
+b

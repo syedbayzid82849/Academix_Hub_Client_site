@@ -8,13 +8,10 @@ import AllCourse from "../pages/AllCourse/AllCourse";
 import CourseDetails from "../pages/courseDetails/CourseDetails";
 import AddCourse from "../pages/AddCourse/AddCourse";
 import PrivateRoute from "./PrivateRoute";
+import ManageCourse from "../pages/MenageCouse/MenageCourse";
 import EditCourse from "../pages/EditCourse/EditCourse";
 import MyEnrolled from "../pages/MyEnrolled/MyEnrolled";
 import FAQs from "../pages/FAQs/FAQs";
-import DashboardLayout from "../layout/DashboardLayout/DashboardLayout";
-import ManageCourse from "../pages/MenageCourse/MenageCourse";
-import DashboardHome from "../pages/DeshboardPages/DashboardHome/DashboardHome";
-import Profile from "../pages/DeshboardPages/Profile/Profile";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +22,10 @@ const router = createBrowserRouter([
                 path: "/",
                 loader: () => fetch('https://academix-hub-server.vercel.app/all-course'),
                 element: <Home></Home>
+            },
+            {
+                path: '/courses',
+                element: <AllCourse></AllCourse>
             },
             {
                 path: '/courseDetails/:id',
@@ -63,8 +64,8 @@ const router = createBrowserRouter([
                     </PrivateRoute>
             },
             {
-                path: '/faqs',
-                element: <FAQs></FAQs>
+                path: '/faqs', 
+                element:<FAQs></FAQs>
             },
             {
                 path: '/login',
@@ -81,19 +82,8 @@ const router = createBrowserRouter([
         ],
     },
     {
-        path: "/dashboard",
-        element: (
-            <PrivateRoute>
-                <DashboardLayout />
-            </PrivateRoute>
-        ),
-        children: [
-            { path: "/dashboard", element: <DashboardHome /> },
-            { path: "/dashboard/courses", element: <AllCourse /> },
-            { path: "/dashboard/profile", element: <Profile /> },
-        ],
+        path: '/desh
     }
-
 ]);
 
 export default router;
