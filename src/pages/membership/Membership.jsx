@@ -38,7 +38,7 @@ export function Membership() {
         }
         setLoadingPlan(plan.name);
         try {
-            const res = await fetch("http://localhost:3000/create-checkout-session", {
+            const res = await fetch("https://academix-hub-server-site.vercel.app/create-checkout-session", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ plan, userEmail }),

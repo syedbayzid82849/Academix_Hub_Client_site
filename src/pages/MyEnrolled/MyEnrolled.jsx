@@ -13,7 +13,7 @@ const MyEnrolled = () => {
     useEffect(() => {
         if (user?.email) {
             const email = encodeURIComponent(user.email);
-            axios.get(`http://localhost:3000/myEnrolls?email=${email}`)
+            axios.get(`https://academix-hub-server-site.vercel.app/myEnrolls?email=${email}`)
                 .then(res => {
                     setMyEnroll(res.data);
                 })
@@ -40,7 +40,7 @@ const MyEnrolled = () => {
             confirmButtonText: 'Yes, remove it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:3000/myEnrolls/${id}`)
+                axios.delete(`https://academix-hub-server-site.vercel.app/myEnrolls/${id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             Swal.fire(

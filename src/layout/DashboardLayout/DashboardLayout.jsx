@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { NavLink, Outlet } from "react-router"; // react-router-dom use করতে হবে
+import { useState, useContext } from "react";
+import { NavLink, Outlet } from "react-router"; // ✅ Correct import
 import {
   LayoutDashboard,
   BookOpen,
@@ -13,12 +13,11 @@ import {
 } from "lucide-react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../context/AuthContext";
-import { useContext } from "react";
 
 const DashboardLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleSidebar = () => setIsOpen(!isOpen);
-  const {signOutUser } = useContext(AuthContext);
+  const { signOutUser } = useContext(AuthContext);
 
   const handleSignOut = () => {
     Swal.fire({
@@ -28,7 +27,7 @@ const DashboardLayout = () => {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, Logout"
+      confirmButtonText: "Yes, Logout",
     }).then((result) => {
       if (result.isConfirmed) {
         signOutUser()
@@ -36,15 +35,15 @@ const DashboardLayout = () => {
             Swal.fire({
               title: "Logged Out!",
               text: "You have been logged out successfully.",
-              icon: "success"
+              icon: "success",
             });
           })
-          .catch(error => {
+          .catch((error) => {
             console.log(error);
             Swal.fire({
               title: "Error!",
               text: "Something went wrong during logout.",
-              icon: "error"
+              icon: "error",
             });
           });
       }
@@ -52,15 +51,26 @@ const DashboardLayout = () => {
   };
 
   return (
-    <div className="flex min-h-screen ">
+    <div className="flex min-h-screen bg-gray-900 text-white">
+      {/* Overlay for Mobile */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          onClick={toggleSidebar}
+        ></div>
+      )}
+
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 z-50 bg-blue-900 text-white h-full p-4 flex flex-col transition-all duration-300
-        ${isOpen ? "w-64" : "w-0 md:w-64"} overflow-hidden`}
+        className={`fixed top-0 left-0 z-50 bg-blue-900 text-white h-full p-4 flex flex-col transition-transform duration-300
+        ${isOpen ? "translate-x-0 w-64" : "-translate-x-full w-64"} md:translate-x-0 md:w-64`}
       >
         {/* Sidebar Header */}
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold hidden md:block">Academic Hub</h2>
+          {/* Logo */}
+          <NavLink to="/" className="flex items-center space-x-2 text-xl font-bold">
+            <span className='font-bold text-2xl tracking-wide text-violet-600 dark:text-violet-400 italic'>Academix-Hub</span>
+          </NavLink>
           <button
             onClick={toggleSidebar}
             className="md:hidden text-white hover:text-yellow-300"
@@ -74,10 +84,9 @@ const DashboardLayout = () => {
           <NavLink
             to="/dashboard"
             className={({ isActive }) =>
-              `flex items-center gap-2 hover:text-yellow-300 ${isActive && window.location.pathname === "/dashboard" ? "text-yellow-400" : ""
+              `flex items-center gap-2 hover:text-yellow-300 ${isActive ? "text-yellow-400" : ""
               }`
             }
-
           >
             <LayoutDashboard size={18} /> Overview
           </NavLink>
@@ -131,29 +140,32 @@ const DashboardLayout = () => {
           >
             <User size={18} /> My Profile
           </NavLink>
-          <NavLink
+
+          <button
             onClick={handleSignOut}
             className="flex items-center gap-2 hover:text-red-400 mt-auto"
           >
             <LogOut size={18} /> Logout
-          </NavLink>
-
+          </button>
         </nav>
       </div>
 
-      {/* Mobile Navbar */}
-      <div className="fixed md:hidden bg-blue-900 text-white w-full flex justify-between items-center p-4 z-40">
-        <h2 className="text-lg font-semibold">Academic Hub</h2>
+      {/* Mobile Top Navbar */}
+      <div className="fixed md:hidden bg-blue-900 text-white w-full flex justify-between items-center p-4 z-30">
+        {/* Logo */}
+        <NavLink to="/" className="flex items-center space-x-2 text-xl font-bold">
+          <span className='font-bold text-2xl tracking-wide text-violet-600 dark:text-violet-400 italic'>Academix-Hub</span>
+        </NavLink>
         <button onClick={toggleSidebar} className="text-white">
           <Menu size={24} />
         </button>
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 md:ml-64 mt-16 md:mt-0 transition-all duration-300">
+      <div className="flex-1 md:ml-64 mt-16 md:mt-0 p-4 transition-all duration-300">
         <Outlet />
       </div>
-    </div >
+    </div>
   );
 };
 

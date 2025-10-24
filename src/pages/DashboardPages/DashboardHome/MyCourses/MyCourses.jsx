@@ -15,7 +15,7 @@ export default function MyCourses() {
         const fetchCourses = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get(`http://localhost:3000/manage-course/${user.email}`);
+                const response = await axios.get(`https://academix-hub-server-site.vercel.app/manage-course/${user.email}`);
                 setCourses(response.data);
                 setLoading(false);
             } catch (error) {

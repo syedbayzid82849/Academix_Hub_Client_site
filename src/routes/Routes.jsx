@@ -25,7 +25,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                loader: () => fetch('http://localhost:3000/all-course'),
+                loader: () => fetch('https://academix-hub-server-site.vercel.app/all-course'),
                 element: <Home></Home>
             },
             {
@@ -38,12 +38,12 @@ const router = createBrowserRouter([
             },
             {
                 path: '/courseDetails/:id',
-                loader: ({ params }) => fetch(`http://localhost:3000/courseDetails/${params.id}`),
+                loader: ({ params }) => fetch(`https://academix-hub-server-site.vercel.app/courseDetails/${params.id}`),
                 element: <CourseDetails></CourseDetails>
             },
             {
                 path: '/edit-course/:id',
-                loader: ({ params }) => fetch(`http://localhost:3000/edit-course/${params.id}`),
+                loader: ({ params }) => fetch(`https://academix-hub-server-site.vercel.app/edit-course/${params.id}`),
                 element:
                     <PrivateRoute>
                         <EditCourse></EditCourse>
@@ -86,7 +86,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/manage-courses',
-                loader: ({ params }) => fetch(`http://localhost:3000/menage-course/${params.email}`),
+                loader: ({ params }) => fetch(`https://academix-hub-server-site.vercel.app/menage-course/${params.email}`),
                 element:
                     <PrivateRoute>
                         <ManageCourse></ManageCourse>
@@ -94,7 +94,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/myEnrolls',
-                loader: ({ params }) => fetch(`http://localhost:3000/my-enrolls/${params.email}`),
+                loader: ({ params }) => fetch(`https://academix-hub-server-site.vercel.app/my-enrolls/${params.email}`),
                 element:
                     <PrivateRoute>
                         <MyEnrolled></MyEnrolled>

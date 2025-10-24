@@ -110,7 +110,7 @@ const Hero = () => {
                                 whileTap={{ scale: 0.95 }}
                             >
                                 <NavLink
-                                    to={'/courses'}
+                                    to={'/dashboard'}
                                     className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-full text-lg font-semibold shadow-lg"
                                 >
                                     Get Started

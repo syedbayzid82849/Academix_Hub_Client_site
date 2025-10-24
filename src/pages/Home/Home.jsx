@@ -11,7 +11,6 @@ import Contact from '../../components/Contact/Contact';
 
 const Home = () => {
     const courses = useLoaderData();
-    console.log(courses);
     return (
         <div className="">
             <HelmetProvider>

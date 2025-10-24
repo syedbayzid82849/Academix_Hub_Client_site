@@ -12,7 +12,6 @@ const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     // user chack
     const [user, setUser] = useState(null);
-    console.log(user);
 
     // create user with name, email, password, photoURL
     const createUserWithEP = (email, password) => {
@@ -56,7 +55,7 @@ const AuthProvider = ({ children }) => {
     // get all courses from the server
     const getAllCourses = () => {
         setLoading(true);
-        return axios.get('http://localhost:3000/all-course')
+        return axios.get('https://academix-hub-server-site.vercel.app/all-course')
             .then(response => {
                 setLoading(false);
                 return response.data;

@@ -45,6 +45,16 @@ const Navbar = () => {
             </li>
             <li>
                 <NavLink
+                    to="/dashboard"
+                    className={({ isActive }) =>
+                        isActive ? "text-violet-600 dark:text-violet-400 font-semibold" : "text-gray-800 dark:text-gray-200 hover:text-violet-600 dark:hover:text-violet-400"
+                    }
+                >
+                    Dashboard
+                </NavLink>
+            </li>
+            <li>
+                <NavLink
                     to="/faqs"
                     onClick={() => isMobile && setIsMenuOpen(false)}
                     className={({ isActive }) =>
@@ -167,7 +177,7 @@ const Navbar = () => {
                             user ? (
                                 <div className='flex flex-row-reverse items-center justify-between mt-4'>
                                     <div className="tooltip tooltip-bottom" data-tip={user?.displayName || "User"}>
-                                        <NavLink to="/profile">
+                                        <NavLink to="/dashboard/profile">
                                             {user?.photoURL ? (
                                                 <img
                                                     className="w-10 h-10 border border-black rounded-full"

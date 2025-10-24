@@ -5,6 +5,7 @@ import { useContext } from 'react';
 
 const Profile = () => {
     const { user } = useContext(AuthContext);
+    const email= user?.email;
     const profileData = {
         name: user?.displayName,
         title: "UI/UX Designer",
@@ -65,6 +66,7 @@ const Profile = () => {
                 {/* Content */}
                 <div className="min-h-screen text-center pt-16 pb-6 px-6">
                     <h2 className="text-2xl font-bold text-gray-800 mt-2">{name}</h2>
+                    <p className="text-sm text-blue-600 font-medium uppercase">{email}</p>
                     <p className="text-sm text-blue-600 font-medium uppercase">{title}</p>
 
                     <p className="text-gray-500 mt-4 mb-6 text-sm leading-relaxed max-w-xs mx-auto">

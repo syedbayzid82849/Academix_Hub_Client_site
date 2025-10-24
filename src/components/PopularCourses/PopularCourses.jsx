@@ -7,7 +7,7 @@ const PopularCourses = () => {
     const [courses, setCourses] = useState([]);
 
     useEffect(() => {
-        axios.get('https://academix-hub-server.vercel.app/popular-courses')
+        axios.get('https://academix-hub-server-site.vercel.app/popular-courses')
             .then(res => {
                 setCourses(res.data);
             })

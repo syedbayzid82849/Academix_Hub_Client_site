@@ -6,7 +6,6 @@ import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const HomeCourseComponent = () => {
     const { getAllCourses, loading } = useContext(AuthContext);
-    console.log(getAllCourses);
     const [courses, setCourses] = useState([]);
 
     useEffect(() => {

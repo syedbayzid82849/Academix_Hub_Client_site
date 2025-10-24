@@ -17,7 +17,7 @@ const DashboardHome = () => {
 
         const fetchStats = async () => {
             try {
-                const res = await axios.get(`http://localhost:3000/dashboard-stats?email=${user?.email}`);
+                const res = await axios.get(`https://academix-hub-server-site.vercel.app/dashboard-stats?email=${user?.email}`);
                 setStats(res.data);
             } catch (error) {
                 console.error("Error fetching dashboard stats:", error);
