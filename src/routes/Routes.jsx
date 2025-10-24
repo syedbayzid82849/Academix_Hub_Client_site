@@ -16,6 +16,7 @@ import ManageCourse from "../pages/MenageCourse/MenageCourse";
 import DashboardHome from "../pages/DashboardPages/DashboardHome/DashboardHome";
 import Profile from "../pages/DashboardPages/Profile/Profile";
 import { Membership } from "../pages/membership/Membership";
+import MyCourses from "../pages/DashboardPages/DashboardHome/MyCourses/MyCourses";
 
 const router = createBrowserRouter([
     {
@@ -75,7 +76,7 @@ const router = createBrowserRouter([
         ),
         children: [
             { path: "/dashboard", element: <DashboardHome /> },
-            { path: "/dashboard/courses", element: <AllCourse /> },
+            { path: "/dashboard/my-courses", element: <MyCourses /> },
             {
                 path: '/dashboard/add-course',
                 element:

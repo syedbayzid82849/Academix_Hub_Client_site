@@ -83,7 +83,7 @@ const DashboardLayout = () => {
           </NavLink>
 
           <NavLink
-            to="/dashboard/courses"
+            to="/dashboard/my-courses"
             className={({ isActive }) =>
               `flex items-center gap-2 hover:text-yellow-300 ${isActive ? "text-yellow-400" : ""
               }`

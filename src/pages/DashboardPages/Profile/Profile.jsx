@@ -4,12 +4,13 @@ import { AuthContext } from '../../../context/AuthContext';
 import { useContext } from 'react';
 
 const Profile = () => {
+    const { user } = useContext(AuthContext);
     const profileData = {
-        name: "Apurbo Akhond",
+        name: user?.displayName,
         title: "UI/UX Designer",
         bio: "Passionate designer creating modern and user-friendly web experiences. Always exploring creative design solutions.",
-        followers: 78,
-        following: 12,
+        followers: 0,
+        following: 0,
         bannerUrl: "https://placehold.co/800x250/1E40AF/1D4ED8?text=Blue+Wave+Design",
         avatarUrl: "https://placehold.co/128x128/374151/ffffff?text=AA",
         socialLinks: [
@@ -37,10 +38,9 @@ const Profile = () => {
         </a>
     );
     const { name, title, bio, followers, following, bannerUrl, avatarUrl, socialLinks } = profileData;
-    const { user } = useContext(AuthContext);
 
     return (
-        <div className=" flex items-center justify-center p-4 font-inter">
+        <div className="container mx-auto flex items-center justify-center p-4 font-inter">
             <div className="w-full  bg-white shadow-xl rounded-xl overflow-hidden transform hover:shadow-2xl transition duration-500 ease-in-out">
 
                 {/* Banner */}
