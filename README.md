@@ -15,11 +15,12 @@ A robust, full-stack Learning Management System built on the **MERN stack**, des
 
 *Features:
 1. Dashboard 
-2. My Courses section in Dashboard
-3. Profile section in Dashboard
+2. My Courses section in Dashboard.
+3. Profile section in Dashboard.
+4. Membership section.
 
 *Technology:
-1. NodeMailer for contact
+1. NodeMailer for contact.
 
 ---
 
