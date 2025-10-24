@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
 
@@ -8,26 +9,15 @@ const Contact = () => {
     // submit handler
     const onSubmit = async (data) => {
         try {
-            const res = await fetch("http://localhost:3000/send-email", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-            });
-
-            const result = await res.json();
-            if (result.success) {
-                console.log("✅ Email sent successfully!");
-                reset();
-            } else {
-                console.log("❌ Email failed to send.");
-            }
-        } catch (err) {
-            console.error("Error:", err);
+            const res = await axios.post("http://localhost:5000/send-email", data);
+            console.log(res.data);
+            alert("✅ Email sent successfully!");
+            reset();
+        } catch (error) {
+            console.error("❌ Error sending email:", error);
+            alert("Failed to send email!");
         }
     };
-
     return (
         <>
             <section className="my-30 px-4 md:px-10 container mx-auto">

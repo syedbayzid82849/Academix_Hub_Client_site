@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
 
@@ -8,7 +9,7 @@ const Contact = () => {
     // submit handler
     const onSubmit = async (data) => {
         try {
-            const res = await fetch("http://localhost:3000/send-email", {
+            const res = await fetch("https://your-server-domain/send-email", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
