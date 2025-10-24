@@ -8,31 +8,9 @@ import banner2 from "../../assets/banner2.jpeg";
 import banner3 from "../../assets/banner3.jpeg";
 import banner4 from "../../assets/banner4.jpeg";
 import { NavLink } from "react-router";
-import { useState } from "react";
-import { useEffect } from "react";
-import { AnimatePresence } from "framer-motion";
-import { FaArrowUp } from "react-icons/fa";
 
 const Hero = () => {
-    const [showScrollTop, setShowScrollTop] = useState(false);
-
-    const handleScroll = () => {
-        if (window.scrollY > 300) {
-            setShowScrollTop(true);
-        } else {
-            setShowScrollTop(false);
-        }
-    };
-
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-
+    
     const settings = {
         dots: true,
         infinite: true,
@@ -158,9 +136,9 @@ const Hero = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 50 }}
                         onClick={scrollToTop}
-                        className="fixed bottom-6 right-6 rounded-full bg-blue-600 hover:bg-blue-700 text-white p-4  z-50"
+                        className="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg z-50"
                     >
-                        <FaArrowUp />
+                        ↑ Top
                     </motion.button>
                 )}
             </AnimatePresence>

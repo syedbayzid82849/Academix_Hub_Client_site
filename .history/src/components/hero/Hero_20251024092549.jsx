@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import { motion } from "framer-motion";
+import {  } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import banner1 from "../../assets/banner1.jpg";
@@ -10,8 +10,6 @@ import banner4 from "../../assets/banner4.jpeg";
 import { NavLink } from "react-router";
 import { useState } from "react";
 import { useEffect } from "react";
-import { AnimatePresence } from "framer-motion";
-import { FaArrowUp } from "react-icons/fa";
 
 const Hero = () => {
     const [showScrollTop, setShowScrollTop] = useState(false);
@@ -158,9 +156,9 @@ const Hero = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 50 }}
                         onClick={scrollToTop}
-                        className="fixed bottom-6 right-6 rounded-full bg-blue-600 hover:bg-blue-700 text-white p-4  z-50"
+                        className="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg z-50"
                     >
-                        <FaArrowUp />
+                        ↑ Top
                     </motion.button>
                 )}
             </AnimatePresence>
