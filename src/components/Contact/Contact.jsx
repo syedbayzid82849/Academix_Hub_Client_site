@@ -1,32 +1,35 @@
 import React from "react";
+import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
+import { Toaster } from "react-hot-toast";
 
 const Contact = () => {
     // react-hook-form setup
     const { register, handleSubmit, reset } = useForm();
 
     // submit handler
+
     const onSubmit = async (data) => {
         try {
-            const res = await fetch("http://localhost:3000/send-email", {
+            const res = await fetch("https://academix-hub-server-site.vercel.app/send-email", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data),
             });
 
             const result = await res.json();
             if (result.success) {
-                console.log("✅ Email sent successfully!");
+                toast.success("✅ Email sent successfully!");
                 reset();
             } else {
-                console.log("❌ Email failed to send.");
+                toast.error("❌ Email failed to send.");
             }
         } catch (err) {
             console.error("Error:", err);
+            toast.error("⚠️ Something went wrong!");
         }
     };
+
 
     return (
         <>
@@ -1001,6 +1004,7 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
+                    <Toaster position="top-right" /> {/* ✅ Add Toaster once */}
             </section>
         </>
     );
