@@ -5,8 +5,6 @@ Deployment	Repository
 Live Demo	https://academix-hub.netlify.app/
 Server Code	(https://github.com/syedbayzid82849/Academix_Hub_Server_site.git)
 
-Export to Sheets
-
 Key Features
 1. Multi-Role Functionality & Dashboards
 The system implements a critical segregation of duties to manage a dual-role environment.
